@@ -20,16 +20,25 @@ font-family: 'Montserrat', sans-serif;
 .bg-cards {
     background-color: rgba(255, 0, 0, 0.4);
 }
+/* end backgrounds */
 
 /* card styling */
 .card-layout {
+    position: relative;
     border: 1px solid #000000;
     background-color: #ffffff;
     border-radius: 5px;
     margin: 10px 0 3px;
-    height: 75vh;
+    height: 400px;
 }
 
-.card-layout p {
+.card-p-font {
     font-size: 1.2em;
 }
+
+.right-bottom-grid {        /* set link to right bottom in card */
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+}
+/* end card styling */
