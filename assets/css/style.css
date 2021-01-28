@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+font-family: 'Montserrat', sans-serif;
+}
+
+/* colors */
+.yellow {
+    background-color: #F7DE6A; /* the house style yellow color */ 
+    border-color: #F7DE6A; /* the house style yellow color */
+}
+
+.yellow:hover {
+  background-color: #C5B054;
+  border-color: #C5B054;
+}
+/* end colors */
