@@ -34,6 +34,12 @@ font-family: 'Montserrat', sans-serif;
 }
 /* end backgrounds */
 
+/* buttons */
+.btn-beer-amount {
+    border-radius: 15px;
+}
+/* end buttons */
+
 /* card styling */
 .card-layout {
     position: relative;
