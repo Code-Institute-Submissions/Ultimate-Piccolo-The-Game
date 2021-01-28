@@ -26,6 +26,16 @@ font-family: 'Montserrat', sans-serif;
   background-color: #C5B054;
   border-color: #C5B054;
 }
+
+.pink {
+    background-color: #6A6BF7;
+    border-color: #6A6BF7;
+}
+
+.pink:hover {
+    background-color: #047485;
+    border-color: #047485;
+}
 /* end colors */
 
 /* backgrounds */
