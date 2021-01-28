@@ -4,7 +4,6 @@
 body {
 font-family: 'Montserrat', sans-serif;
 }
-/* end body styling */
 
 /* colors */
 .yellow {
@@ -16,4 +15,18 @@ font-family: 'Montserrat', sans-serif;
   background-color: #C5B054;
   border-color: #C5B054;
 }
-/* end colors */
+
+/* backgrounds */
+.bg-cards {
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+/* card styling */
+.card-layout {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 10px 0 3px;
+    height: 75vh;
+}
+
