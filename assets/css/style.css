@@ -57,7 +57,7 @@ font-family: 'Montserrat', sans-serif;
 
 /* footer */
 .footer-general {
-    background-color: #525252;
+    background-color: #343A40;
     color: #fafafa;
     min-height: 120px;
     margin: 0;
@@ -71,6 +71,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #87cefa;
+    color: #F7DE6A;
     text-decoration: none;
 }
+/* end footer styling */
