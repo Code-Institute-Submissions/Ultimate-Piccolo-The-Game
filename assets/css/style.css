@@ -30,3 +30,6 @@ font-family: 'Montserrat', sans-serif;
     height: 75vh;
 }
 
+.card-layout p {
+    font-size: 1.2em;
+}
