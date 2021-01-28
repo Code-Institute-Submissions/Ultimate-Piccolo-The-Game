@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-/* body styling */
+/* general styling */
 body {
 font-family: 'Montserrat', sans-serif;
 }
+
+.link-styling {
+    text-decoration: none;
+    color: #000000;
+}
+
+.link-styling:hover {
+    color: #000000;
+    text-decoration-color: #000000;
+}
+/* end general styling */
 
 /* colors */
 .yellow {
@@ -15,6 +26,7 @@ font-family: 'Montserrat', sans-serif;
   background-color: #C5B054;
   border-color: #C5B054;
 }
+/* end colors */
 
 /* backgrounds */
 .bg-cards {
