@@ -54,3 +54,12 @@ font-family: 'Montserrat', sans-serif;
     right: 0;
 }
 /* end card styling */
+
+/* footer */
+.footer-general {
+    background-color: #525252;
+    color: #fafafa;
+    min-height: 120px;
+    margin: 0;
+    padding: 20px;
+}
