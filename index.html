@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +11,6 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <title>Ultimate Piccalo: The Game</title>
 </head>
-
 <body>
     <header>
         <!--The navbar-->
@@ -23,20 +21,23 @@
                         alt="Logo of Ultimate Piccalo: The Game" loading="lazy">
                 </a>
                 <div>
-                    <button type="button" class="btn yellow btn-lg" data-toggle="modal" data-target="#BookModal">
+                    <!--button to open payment modal-->
+                    <button type="button" class="btn yellow" data-toggle="modal" data-target="#BookModal">
                         Share a beer!
                     </button>
                 </div>
             </div>
         </nav>
     </header>
-    <!--welcoming card-->
+    <!--section 1: would you like to donate page-->
     <section class="bg-cards">
         <div class="container-fluid py-3">
             <div class="row justify-content-center">
                 <div class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-5">
                     <div class="card-layout px-3 py-4">
+                        <!--title card-->
                         <h1>Hi there!</h1>
+                        <!--body card-->
                         <p class="card-p-font">
                             Nice to see you here and we hope that
                             you are having a wonderfull night:)
@@ -44,9 +45,11 @@
                             of extra beers by pushing this button!
                         </p>
                         <br>
+                        <!--button to open payment modal-->
                         <button type="button" class="btn yellow btn-lg" data-toggle="modal" data-target="#BookModal">
                             Share a beer!
                         </button>
+                        <!--link to skip payment and go to the game-->
                         <div class="right-bottom-grid px-3 pb-1">
                             <a class="link-styling" href=".">skip donating...</a>
                         </div>
@@ -108,6 +111,7 @@
                         <h4 class="modal-title text-center" id="BookModalLabel">
                             How many beers would you like to give?
                         </h4>
+                        <!--button to close the modal-->
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -116,26 +120,27 @@
                     <div class="modal-body">
                         <div class="d-flex justify-content-center">
                             <!--buttons to choose the amount you want to pay-->
-                            <button type="button" class="btn yellow btn-lg btn-beer-amount btn1beer mx-2">
+                            <button type="button" class="btn yellow btn-lg btn-beer btn1beer mx-2">
                                 1 beer
                             </button>
-                            <button type="button" class="btn yellow btn-lg btn-beer-amount btn6beer mx-2">
+                            <button type="button" class="btn yellow btn-lg btn-beer btn6beer mx-2">
                                 6 beers
                             </button>
-                            <button type="button" class="btn yellow btn-lg btn-beer-amount btn24beer mx-2">
+                            <button type="button" class="btn yellow btn-lg btn-beer btn24beer mx-2">
                                 24 beers
                             </button>
                         </div>
                         <p class="text-center mt-4">
                             This/these beer(s) will cost you:
                         </p>
-                        <!--this H2 shows how much the beers cost-->
+                        <!--this H2 element shows how much the beer(s) cost-->
                         <h2 class="amountbeer mt-4 text-center font-weight-bold"></h2>
                     </div>
                     <!--modal footer-->
                     <div class="modal-footer d-flex justify-content-center">
                         <!--button that goes to PayPal-->
-                        <a class="btn pink btn-lg" href="https://paypal.me/RaymondHuisman?locale.x=nl_NL" target="_blank">
+                        <a class="btn pink btn-lg" href="https://paypal.me/RaymondHuisman?locale.x=nl_NL"
+                            target="_blank">
                             <h5 class="text-white font-weight-bold">
                                 Pay Now! <i class="fab fa-paypal"></i>
                             </h5>
@@ -158,5 +163,4 @@
         <script type="text/javascript" src="assets/js/main.js"></script>
     </footer>
 </body>
-
 </html>
