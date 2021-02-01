@@ -30,4 +30,17 @@ var player7 = document.getElementById('player7').value;
 var player8 = document.getElementById('player8').value;
 var hideNames = document.getElementById("formpage");
 hideNames.innerHTML = "";
+
+//object to store the player names
+var listPlayers = {};
+  
+listPlayers['name1'] = player1;
+listPlayers['name2'] = player2;
+listPlayers['name3'] = player3;
+listPlayers['name4'] = player4;
+listPlayers['name5'] = player4;
+listPlayers['name6'] = player4;
+listPlayers['name7'] = player4;
+listPlayers['name8'] = player4;
+
 }); 
