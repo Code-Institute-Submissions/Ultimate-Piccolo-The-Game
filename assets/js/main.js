@@ -51,7 +51,8 @@ buttonGetName.addEventListener("click", function () {
 
     //turn string who is stored in local storages into object and display it on screen (need some editting later)
     var playerStored = JSON.parse(localStorage.getItem('names'));
-    var output = document.getElementById('thegamepage');
+    var output = document.getElementById('GamePage');
+    output.id = "startGame"
 
     output.innerHTML += "<p>" + playerStored['name1'] + "</p>";
     output.innerHTML += "<p>" + playerStored['name2'] + "</p>";
