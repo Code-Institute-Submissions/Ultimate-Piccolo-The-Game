@@ -17,24 +17,14 @@ $(".btn24beer").on("click", function(){
 });
 
 
-function getUserName() {
+$(".btnform").on("click",function(){
 var player1 = document.getElementById('player1').value;
-var result = document.getElementById('result');
-
-if (player1.length < 3) {
-    result.textContent = 'Username must contain at least 3 characters';
-    //alert('Username must contain at least 3 characters');
-} else {
-    result.textContent = 'Your username is: ' + player1;
-    //alert(nameField);
-}
-}
-
-var subButton = document.getElementById('subButton');
-subButton.addEventListener('click', getUserName, false); 
-
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  }};
+var player2 = document.getElementById('player2').value;
+var player3 = document.getElementById('player3').value;
+var player4 = document.getElementById('player4').value;
+var player5 = document.getElementById('player5').value;
+var player6 = document.getElementById('player6').value;
+var player7 = document.getElementById('player7').value;
+var player8 = document.getElementById('player8').value;
+document.getElementById("formpage").style.visibility='hidden'; 
+}); 
