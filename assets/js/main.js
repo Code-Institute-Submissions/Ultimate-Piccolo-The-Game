@@ -16,6 +16,17 @@ $(".btn24beer").on("click", function () {
     document.getElementById("btn-link").href = "https://www.paypal.com/paypalme/RaymondHuisman/10";
 });
 
+// code for the player and game page.
+// code for when the players are allready put into the input don't show the input field again.
+window.addEventListener("load", function(){
+  
+  var players = localStorage.getItem('names');
+  var toRemove = document.getElementById('playerPage');
+  if(players.length > 0){
+    toRemove.innerHTML = "";
+  }
+  
+});
 
 var buttonGetName = document.getElementById("btnPlayer");
 
