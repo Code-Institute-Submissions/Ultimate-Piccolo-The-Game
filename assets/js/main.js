@@ -17,7 +17,7 @@ $(".btn24beer").on("click", function(){
 });
 
 
-var buttonGetName = document.getElementById("btnName");
+var buttonGetName = document.getElementById("btnPlayer");
 
 buttonGetName.addEventListener("click", function(){
 var player1 = document.getElementById('player1').value;
@@ -28,8 +28,6 @@ var player5 = document.getElementById('player5').value;
 var player6 = document.getElementById('player6').value;
 var player7 = document.getElementById('player7').value;
 var player8 = document.getElementById('player8').value;
-var hideNames = document.getElementById("formpage");
-hideNames.innerHTML = "";
 
 //object to store the player names
 var listPlayers = {};
@@ -46,5 +44,8 @@ listPlayers['name8'] = player4;
 //turn object into a string and put it in the local storage
 var listString = JSON.stringify(listPlayers)
 localStorage.setItem('names', listString);
+
+var hideNames = document.getElementById("playerPage");
+hideNames.innerHTML = "";
 
 }); 
