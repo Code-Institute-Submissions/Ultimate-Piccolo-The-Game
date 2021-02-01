@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <title>Ultimate Piccalo: The Game</title>
 </head>
+
 <body>
     <header>
         <!--The navbar-->
@@ -38,24 +40,49 @@
                         <!--title card-->
                         <h1>Hi there!</h1>
                         <!--body card-->
-                        <p class="card-p-font">
-                            Nice to see you here and we hope that
-                            you are having a wonderfull night:)
-                            To upgrade our night give us a couple
-                            of extra beers by pushing this button!
-                        </p>
-                        <br>
-                        <!--button to open payment modal-->
-                        <button type="button" class="btn yellow btn-lg" data-toggle="modal" data-target="#BookModal">
-                            Share a beer!
-                        </button>
-                        <!--link to skip payment and go to the game-->
-                        <div class="right-bottom-grid px-3 pb-1">
-                            <a class="link-styling" href=".">skip donating...</a>
+                        <form id="nameForm">
+                            <div class="form-users">
+                                <label for="player1">First name:</label>
+                                <input type="text" id="player1"><br>
+
+                                <label for="player2">First name:</label>
+                                <input type="text" id="player2"><br>
+
+                                <label for="player3">First name:</label>
+                                <input type="text" id="player3"><br>
+
+                                <label for="player4">First name:</label>
+                                <input type="text" id="player4"><br>
+
+                                <label for="player5">First name:</label>
+                                <input type="text" id="player5"><br>
+
+                                <label for="player6">First name:</label>
+                                <input type="text" id="player6"><br>
+
+                                <label for="player7">First name:</label>
+                                <input type="text" id="player7"><br>
+
+                                <label for="player8">First name:</label>
+                                <input type="text" id="player8"><br>
+                            </div>
+                            <div class="form-sub">
+                                <button id="subButton" type="button">Print your name!</button>
+                            </div>
+                        </form>
+                        <div>
+                            <p id='result'></p>
                         </div>
+                    </div>
+                    <!--button to open payment modal-->
+
+                    <!--link to skip payment and go to the game-->
+                    <div class="right-bottom-grid px-3 pb-1">
+                        <a class="link-styling" href=".">skip donating...</a>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!--footer-->
@@ -163,4 +190,5 @@
         <script type="text/javascript" src="assets/js/main.js"></script>
     </footer>
 </body>
+
 </html>
