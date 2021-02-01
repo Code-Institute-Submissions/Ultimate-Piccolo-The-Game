@@ -17,7 +17,9 @@ $(".btn24beer").on("click", function(){
 });
 
 
-$(".btnform").on("click",function(){
+var buttonGetName = document.getElementById("btnName");
+
+buttonGetName.addEventListener("click", function(){
 var player1 = document.getElementById('player1').value;
 var player2 = document.getElementById('player2').value;
 var player3 = document.getElementById('player3').value;
@@ -26,5 +28,6 @@ var player5 = document.getElementById('player5').value;
 var player6 = document.getElementById('player6').value;
 var player7 = document.getElementById('player7').value;
 var player8 = document.getElementById('player8').value;
-document.getElementById("formpage").style.visibility='hidden';
+var hideNames = document.getElementById("formpage");
+hideNames.innerHTML = "";
 }); 
