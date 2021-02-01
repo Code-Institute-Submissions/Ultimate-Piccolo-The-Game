@@ -43,4 +43,8 @@ listPlayers['name6'] = player4;
 listPlayers['name7'] = player4;
 listPlayers['name8'] = player4;
 
+//turn object into a string and put it in the local storage
+var listString = JSON.stringify(listPlayers)
+localStorage.setItem('names', listString);
+
 }); 
