@@ -26,5 +26,5 @@ var player5 = document.getElementById('player5').value;
 var player6 = document.getElementById('player6').value;
 var player7 = document.getElementById('player7').value;
 var player8 = document.getElementById('player8').value;
-document.getElementById("formpage").style.visibility='hidden'; 
+document.getElementById("formpage").style.visibility='hidden';
 }); 

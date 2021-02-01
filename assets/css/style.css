@@ -57,7 +57,15 @@ font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
     border-radius: 5px;
     margin: 10px 0 3px;
-    height: 400px;
+    max-height: 400; 
+}
+
+.card-layout-playernames {
+    position: relative;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 10px 0 3px;
 }
 
 .card-p-font {
