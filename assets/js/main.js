@@ -18,20 +18,34 @@ $(".btn24beer").on("click", function () {
 });
 
 // code for the player and game page.
+//general var's for player and game page
+var clickNextDiv = document.getElementById('startGame');    //select the whole card div
+var toRemove = document.getElementById('playerPage');       //select the player names input div
+var output = document.getElementById('gamePage');           //select the div where the game text will come in
+
+var playerStoredString = localStorage.getItem('names');     //get player name data from local storage and put it in a string
+var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object
+var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
+
 // when screen loads: code to skip the input field, add class and put the
 // stored string back into a object.
 window.addEventListener("load", function () {
-    var playerStoredString = localStorage.getItem('names');
-    var toRemove = document.getElementById('playerPage');
+    console.log("hi");
     if (playerStoredString.length > 0) {
-        toRemove.innerHTML = "";
-        delta();
+        toRemove.innerHTML = "";                  //remove html of input field
+
+        var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)]; //select random playername
+
+        //output for when a player refreshes the page
+        output.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
+        output.innerHTML += `<p>The page was refreshed, so you and the person who has
+        the phone in his/her hand have to take 2 sips. </p>`;
     }
 });
 
-var buttonGetName = document.getElementById("btnPlayer");
+var buttonGetName = document.getElementById("btnPlayer");   //button to upload data input fields
 
-//put the input data into a variable
+//function to put the player names data into a variable
 buttonGetName.addEventListener("click", function () {
     var player1 = document.getElementById('player1').value;
     var player2 = document.getElementById('player2').value;
@@ -58,38 +72,13 @@ buttonGetName.addEventListener("click", function () {
     var listString = JSON.stringify(listPlayers)
     localStorage.setItem('names', listString);
 
-    //delete the input field
-    var hideNames = document.getElementById("playerPage");
-    hideNames.innerHTML = "";
-
-    delta();
+    toRemove.innerHTML = "";                  //remove html of input field
 
 });
 
-function delta() {
-    //get local data into a var
-    var playerStoredString = localStorage.getItem('names');
-    var playerStored = JSON.parse(playerStoredString);
-
-    //get the div where the text needs to come into a var
-    var output = document.getElementById('gamePage');
-    
-    //turn object into array and select random name
-    var playerStoredArray = Object.values(playerStored);
-    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
-    
-    //output (this still needs to be edited)
-    textDiv.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
-    textDiv.innerHTML += `<p>The page was refreshed, so you and the person who has
-         the phone in his/her hand have to take 2 sips. </p>`
-}
-
 //when the game starts, click on the screen and this will happen: 
-    var clickNextDiv = document.getElementById('startGame');
-    var textDiv = document.getElementById('gamePage');
-    clickNextDiv.addEventListener("click", function () {
-    var playerStoredArray = Object.values(JSON.parse(localStorage.getItem('names')));
-    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
-    textDiv.innerHTML += "<p>" + randomPlayer + "hoi hoe gaat het met je" + "</p>";
+clickNextDiv.addEventListener("click", function () {
+  var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
+    extDiv.innerHTML += "<p>" + randomPlayer + "hoi hoe gaat het met je" + "</p>";
 
 });
