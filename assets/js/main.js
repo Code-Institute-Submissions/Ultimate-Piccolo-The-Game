@@ -17,19 +17,24 @@ $(".btn24beer").on("click", function () {
 });
 
 // code for the player and game page.
-// code for when the players are allready put into the input don't show the input field again.
-window.addEventListener("load", function(){
-  
-  var players = localStorage.getItem('names');
-  var toRemove = document.getElementById('playerPage');
-  if(players.length > 0){
-    toRemove.innerHTML = "";
-  }
-  
+// when screen loads: code to skip the input field, add class and put the
+// stored string back into a object.
+window.addEventListener("load", function () {
+    var playerStoredString = localStorage.getItem('names');
+    var toRemove = document.getElementById('playerPage');
+    var outputLoaded = document.getElementById('gamePage');
+    if (playerStoredString.length > 0) {
+        var players = JSON.parse(playerStoredString);
+        toRemove.innerHTML = "";
+        outputLoaded.classList.add("startGame");
+        //show username stored in object
+        outputLoaded.innerHTML += "<p>" + players['name1'] + "</p>";
+    }
 });
 
 var buttonGetName = document.getElementById("btnPlayer");
 
+//put the input data into a variable
 buttonGetName.addEventListener("click", function () {
     var player1 = document.getElementById('player1').value;
     var player2 = document.getElementById('player2').value;
@@ -62,8 +67,8 @@ buttonGetName.addEventListener("click", function () {
 
     //turn string who is stored in local storages into object and display it on screen (need some editting later)
     var playerStored = JSON.parse(localStorage.getItem('names'));
-    var output = document.getElementById('GamePage');
-    output.id = "startGame"
+    var output = document.getElementById('gamePage');
+    output.classList.add("startGame");
 
     output.innerHTML += "<p>" + playerStored['name1'] + "</p>";
     output.innerHTML += "<p>" + playerStored['name2'] + "</p>";
