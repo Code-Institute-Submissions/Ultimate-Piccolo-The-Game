@@ -22,20 +22,9 @@ $(".btn24beer").on("click", function () {
 window.addEventListener("load", function () {
     var playerStoredString = localStorage.getItem('names');
     var toRemove = document.getElementById('playerPage');
-    var outputLoaded = document.getElementById('gamePage');
-
     if (playerStoredString.length > 0) {
-        var playerStored = JSON.parse(playerStoredString);
         toRemove.innerHTML = "";
-        outputLoaded.classList.add("startGame");
-
-        //turn object into array and select random name
-        var playerStoredArray = Object.values(playerStored);
-        var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
-        //output for when someone refreshes the page
-        outputLoaded.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
-        outputLoaded.innerHTML += `<p>The page was refreshed, so you and the person who has
-         the phone in his/her hand have to take 2 sips. </p></br>`
+        delta();
     }
 });
 
@@ -74,8 +63,8 @@ buttonGetName.addEventListener("click", function () {
 
     //turn string who is stored in local storages into object and display it on screen (need some editting later)
     var playerStored = JSON.parse(localStorage.getItem('names'));
-    var output = document.getElementById('gamePage');
-    output.classList.add("startGame");
+    document.getElementById('gamePage').id = "startGame";
+    var output = document.getElementById('startGame');
 
     output.innerHTML += "<p>" + playerStored['name1'] + "</p>";
     output.innerHTML += "<p>" + playerStored['name2'] + "</p>";
@@ -85,12 +74,31 @@ buttonGetName.addEventListener("click", function () {
     output.innerHTML += "<p>" + playerStored['name6'] + "</p>";
     output.innerHTML += "<p>" + playerStored['name7'] + "</p>";
     output.innerHTML += "<p>" + playerStored['name8'] + "</p>";
-}); 
+});
 
-//when the game starts, click on the screen and this will happen:
-var clickNextText = document.getElementsByClassName("startGame");
+function delta() {
+    //get local data into a var
+    var playerStoredString = localStorage.getItem('names');
+    var playerStored = JSON.parse(playerStoredString);
 
-//put the input data into a variable
-clickNextText.addEventListener("click", function () {
+    //change the id of div game page
+    document.getElementById('gamePage').id = "startGame";
+    var outputLoaded = document.getElementById('startGame');
     
-})
+    //turn object into array and select random name
+    var playerStoredArray = Object.values(playerStored);
+    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
+    
+    //output for when someone refreshes the page
+    outputLoaded.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
+    outputLoaded.innerHTML += `<p>The page was refreshed, so you and the person who has
+         the phone in his/her hand have to take 2 sips. </p></br>`
+}
+
+//when the game starts, click on the screen and this will happen: doesnt work anymore, will be fixed in next commits
+outputLoaded.addEventListener("click", function () {
+    var playerStoredArray = Object.values(JSON.parse(localStorage.getItem('names')));
+    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
+    clickNextText.innerHTML += "<p>" + randomPlayer + "hoi hoe gaat het met je" + "</p>";
+
+});
