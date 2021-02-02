@@ -1,3 +1,4 @@
+//code for the give us a beer modal
 //function to show the price of 1 beer and change paypal link
 $(".btn1beer").on("click", function () {
     $(".amountbeer").text("2 euro");
@@ -61,19 +62,8 @@ buttonGetName.addEventListener("click", function () {
     var hideNames = document.getElementById("playerPage");
     hideNames.innerHTML = "";
 
-    //turn string who is stored in local storages into object and display it on screen (need some editting later)
-    var playerStored = JSON.parse(localStorage.getItem('names'));
-    document.getElementById('gamePage').id = "startGame";
-    var output = document.getElementById('startGame');
+    delta();
 
-    output.innerHTML += "<p>" + playerStored['name1'] + "</p>";
-    output.innerHTML += "<p>" + playerStored['name2'] + "</p>";
-    output.innerHTML += "<p>" + playerStored['name3'] + "</p>";
-    output.innerHTML += "<p>" + playerStored['name4'] + "</p>";
-    output.innerHTML += "<p>" + playerStored['name5'] + "</p>";
-    output.innerHTML += "<p>" + playerStored['name6'] + "</p>";
-    output.innerHTML += "<p>" + playerStored['name7'] + "</p>";
-    output.innerHTML += "<p>" + playerStored['name8'] + "</p>";
 });
 
 function delta() {
@@ -81,24 +71,25 @@ function delta() {
     var playerStoredString = localStorage.getItem('names');
     var playerStored = JSON.parse(playerStoredString);
 
-    //change the id of div game page
-    document.getElementById('gamePage').id = "startGame";
-    var outputLoaded = document.getElementById('startGame');
+    //get the div where the text needs to come into a var
+    var output = document.getElementById('gamePage');
     
     //turn object into array and select random name
     var playerStoredArray = Object.values(playerStored);
     var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
     
-    //output for when someone refreshes the page
-    outputLoaded.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
-    outputLoaded.innerHTML += `<p>The page was refreshed, so you and the person who has
-         the phone in his/her hand have to take 2 sips. </p></br>`
+    //output (this still needs to be edited)
+    textDiv.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
+    textDiv.innerHTML += `<p>The page was refreshed, so you and the person who has
+         the phone in his/her hand have to take 2 sips. </p>`
 }
 
-//when the game starts, click on the screen and this will happen: doesnt work anymore, will be fixed in next commits
-outputLoaded.addEventListener("click", function () {
+//when the game starts, click on the screen and this will happen: 
+    var clickNextDiv = document.getElementById('startGame');
+    var textDiv = document.getElementById('gamePage');
+    clickNextDiv.addEventListener("click", function () {
     var playerStoredArray = Object.values(JSON.parse(localStorage.getItem('names')));
     var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
-    clickNextText.innerHTML += "<p>" + randomPlayer + "hoi hoe gaat het met je" + "</p>";
+    textDiv.innerHTML += "<p>" + randomPlayer + "hoi hoe gaat het met je" + "</p>";
 
 });
