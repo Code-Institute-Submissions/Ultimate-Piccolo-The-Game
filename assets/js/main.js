@@ -32,7 +32,9 @@ window.addEventListener("load", function () {
         //turn object into array and select random name
         var playerStoredArray = Object.values(playerStored);
         var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
-        outputLoaded.innerHTML += "<p>" + randomPlayer + "</p>";
+        outputLoaded.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
+        outputLoaded.innerHTML += `<br><p>The page was refreshed, so you and the person who has
+         the phone in his/her hand have to take 2 sips. </p></br>`
     }
 });
 
@@ -56,10 +58,10 @@ buttonGetName.addEventListener("click", function () {
     listPlayers['name2'] = player2;
     listPlayers['name3'] = player3;
     listPlayers['name4'] = player4;
-    listPlayers['name5'] = player4;
-    listPlayers['name6'] = player4;
-    listPlayers['name7'] = player4;
-    listPlayers['name8'] = player4;
+    listPlayers['name5'] = player5;
+    listPlayers['name6'] = player6;
+    listPlayers['name7'] = player7;
+    listPlayers['name8'] = player8;
 
     //turn object into a string and put it in the local storage
     var listString = JSON.stringify(listPlayers)
