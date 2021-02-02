@@ -33,7 +33,7 @@ window.addEventListener("load", function () {
         var playerStoredArray = Object.values(playerStored);
         var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
         outputLoaded.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
-        outputLoaded.innerHTML += `<br><p>The page was refreshed, so you and the person who has
+        outputLoaded.innerHTML += `<p>The page was refreshed, so you and the person who has
          the phone in his/her hand have to take 2 sips. </p></br>`
     }
 });
