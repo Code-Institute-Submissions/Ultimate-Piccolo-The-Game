@@ -23,12 +23,16 @@ window.addEventListener("load", function () {
     var playerStoredString = localStorage.getItem('names');
     var toRemove = document.getElementById('playerPage');
     var outputLoaded = document.getElementById('gamePage');
+
     if (playerStoredString.length > 0) {
-        var players = JSON.parse(playerStoredString);
+        var playerStored = JSON.parse(playerStoredString);
         toRemove.innerHTML = "";
         outputLoaded.classList.add("startGame");
-        //show username stored in object
-        outputLoaded.innerHTML += "<p>" + players['name1'] + "</p>";
+
+        //turn object into array and select random name
+        var playerStoredArray = Object.values(playerStored);
+        var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
+        outputLoaded.innerHTML += "<p>" + randomPlayer + "</p>";
     }
 });
 
