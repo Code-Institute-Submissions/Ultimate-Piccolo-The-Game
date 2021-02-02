@@ -32,6 +32,7 @@ window.addEventListener("load", function () {
         //turn object into array and select random name
         var playerStoredArray = Object.values(playerStored);
         var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];
+        //output for when someone refreshes the page
         outputLoaded.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
         outputLoaded.innerHTML += `<p>The page was refreshed, so you and the person who has
          the phone in his/her hand have to take 2 sips. </p></br>`
@@ -85,3 +86,11 @@ buttonGetName.addEventListener("click", function () {
     output.innerHTML += "<p>" + playerStored['name7'] + "</p>";
     output.innerHTML += "<p>" + playerStored['name8'] + "</p>";
 }); 
+
+//when the game starts, click on the screen and this will happen:
+var clickNextText = document.getElementsByClassName("startGame");
+
+//put the input data into a variable
+clickNextText.addEventListener("click", function () {
+    
+})
