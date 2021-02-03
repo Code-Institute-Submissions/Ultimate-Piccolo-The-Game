@@ -73,6 +73,10 @@ font-family: 'Montserrat', sans-serif;
     font-size: 1.2em;
 }
 
+.card-p-font-bigger {
+    font-size: 1.4em;
+}
+
 .right-bottom-grid {        /* set link to right bottom in card */
     position: absolute;
     bottom: 1px;
