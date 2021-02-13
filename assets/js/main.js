@@ -43,6 +43,7 @@ window.addEventListener("load", function () {
 var addPlayer = document.getElementById("addPlayer");
 
 addPlayer.addEventListener("click", function () {
+    if(document.getElementsByTagName("input").length < 8){
     var input = document.createElement("input");
     var toTheNextLine = document.createElement("br");
     var playerId = "player";
@@ -55,9 +56,13 @@ addPlayer.addEventListener("click", function () {
 
     input.setAttribute("id", playerId + i);
     input.type = "text";
+    input.classList = "mb-2";
     var playerlist = document.getElementById("input-player-list");
     playerlist.appendChild(input);
     playerlist.appendChild(toTheNextLine);
+} else {
+    alert("max total person");
+}
 });
 
 //code to remove a player
