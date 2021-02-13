@@ -39,6 +39,19 @@ window.addEventListener("load", function () {
     }
 });
 
+//code to add a player
+var addPlayer = document.getElementById("addPlayer");
+
+addPlayer.addEventListener("click", function () {
+    var input = document.createElement("input");
+    var toTheNextLine = document.createElement("br");
+    input.type = "text";
+    var playerlist = document.getElementById("input-player-list");
+    playerlist.appendChild(input);
+    playerlist.appendChild(toTheNextLine);
+});
+
+
 var buttonGetName = document.getElementById("btnPlayer");   //button to upload data input fields
 
 //function to put the player names data into a variable
