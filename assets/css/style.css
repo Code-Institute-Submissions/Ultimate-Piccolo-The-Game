@@ -84,6 +84,29 @@ font-family: 'Montserrat', sans-serif;
 }
 /* end card styling */
 
+/* player names styling */
+.player3-hide {
+    display: none;
+}
+.player4-hide {
+    display: none;
+}
+.player5-hide {
+    display: none;
+}
+.player6-hide {
+    display: none;
+}
+.player7-hide {
+    display: none;
+}
+.player8-hide {
+    display: none;
+}
+
+/* end player names styling */
+
+
 /* footer */
 .footer-general {
     background-color: #343A40;

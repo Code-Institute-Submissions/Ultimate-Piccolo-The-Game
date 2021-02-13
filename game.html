@@ -40,16 +40,30 @@
                         <div id="playerPage">
                             <!--title card-->
                             <h1>Add Players:</h1>
-                            <!--body card-->
-                            <input class="mb-2" type="text" id="player1" maxlength="25" placeholder="Name player 1"><br>
-                            <input class="mb-2" type="text" id="player2" maxlength="25" placeholder="Name player 2"><br>
-                            <input class="mb-2 d-none" type="text" id="player3" maxlength="25" placeholder="Name player 3"><br class="d-none br-player3">
-                            <input class="mb-2 d-none" type="text" id="player4" maxlength="25" placeholder="Name player 4"><br class="d-none br-player4">
-                            <input class="mb-2 d-none" type="text" id="player5" maxlength="25" placeholder="Name player 5"><br class="d-none br-player5">
-                            <input class="mb-2 d-none" type="text" id="player6" maxlength="25" placeholder="Name player 6"><br class="d-none br-player6">
-                            <input class="mb-2 d-none" type="text" id="player7" maxlength="25" placeholder="Name player 7"><br class="d-none br-player7">
-                            <input class="mb-2 d-none" type="text" id="player8" maxlength="25" placeholder="Name player 8"><br class="d-none br-player8">
-                            <button id="add-player" class="btn btn-success" type="button">Add player</button><br><br>
+                            <!--enter names field-->
+                            <input class="mb-2" type="text" id="player1" maxlength="25" placeholder="Name player"><br><!--player 1-->
+                            
+                            <input class="mb-2" type="text" id="player2" maxlength="25" placeholder="Name player"><br><!--player 2-->
+                            
+                            <input class="mb-2 player3-hide" type="text" id="player3" maxlength="25" placeholder="Name player"><!--player 3-->
+                            <button class="btn btn-danger btn-sm ml-2 player3-hide" type="button">Delete</button><br class="player3-hide">
+                            
+                            <input class="mb-2 player4-hide" type="text" id="player4" maxlength="25" placeholder="Name player"><!--player 4-->
+                            <button class="btn btn-danger btn-sm ml-2 player4-hide" type="button">Delete</button><br class="player4-hide">
+
+                            <input class="mb-2 player5-hide" type="text" id="player5" maxlength="25" placeholder="Name player"><!--player 5-->
+                            <button class="btn btn-danger btn-sm ml-2 player5-hide" type="button">Delete</button><br class="player5-hide">
+                            
+                            <input class="mb-2 player6-hide" type="text" id="player6" maxlength="25" placeholder="Name player"><!--player 6-->
+                            <button class="btn btn-danger btn-sm ml-2 player6-hide" type="button">Delete</button><br class="player6-hide">
+
+                            <input class="mb-2 player7-hide" type="text" id="player7" maxlength="25" placeholder="Name player"><!--player 7-->
+                            <button class="btn btn-danger btn-sm ml-2 player7-hide" type="button">Delete</button><br class="player7-hide">
+
+                            <input class="mb-2 player8-hide" type="text" id="player8" maxlength="25" placeholder="Name player"><!--player 8-->
+                            <button class="btn btn-danger btn-sm ml-2 player8-hide" type="button">Delete</button><br class="player8-hide">
+
+                            <button id="add-player" class="btn btn-success btn-sm" type="button">Add player</button><br><br>
                             <button id="btnPlayer" type="button">Start the game!</button>
                         </div>
                         <div id="gamePage" class="card-p-font-bigger"></div>
