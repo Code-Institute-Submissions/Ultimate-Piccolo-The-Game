@@ -60,8 +60,16 @@ addPlayer.addEventListener("click", function () {
     playerlist.appendChild(toTheNextLine);
 });
 
+//code to remove a player
+var removePlayer = document.getElementById("removePlayer");
+removePlayer.addEventListener("click", function () {
+    $("#input-player-list input:last").remove();
+    $("#input-player-list br:last").remove();
 
-var buttonGetName = document.getElementById("btnPlayer");   //button to upload data input fields
+});
+
+//uploading data to local storage
+var buttonGetName = document.getElementById("btnPlayer");
 
 //function to put the player names data into a variable
 buttonGetName.addEventListener("click", function () {
