@@ -45,6 +45,15 @@ var addPlayer = document.getElementById("addPlayer");
 addPlayer.addEventListener("click", function () {
     var input = document.createElement("input");
     var toTheNextLine = document.createElement("br");
+    var playerId = "player";
+    var i = 0;
+    var x = document.getElementsByTagName("INPUT").length + 1;
+
+    for (i = 0; i < x; i++) {
+        i;
+    }
+
+    input.setAttribute("id", playerId + i);
     input.type = "text";
     var playerlist = document.getElementById("input-player-list");
     playerlist.appendChild(input);
