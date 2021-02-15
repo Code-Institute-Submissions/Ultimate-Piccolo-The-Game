@@ -123,8 +123,26 @@ clickNextDiv.addEventListener("click", function () {
         "cheese",
         "kinderen"]
 
-    //the new output text
-    output.innerHTML = "";                  //remove text from old output text
-    output.innerHTML += "<p><b>" + randomPlayer + "</b>, </p>";
-    output.innerHTML += "<p>" + "this is where the questions will come." + "</p>";
-});
+    var b = questions.slice()
+    var newArr = []; //this is the desitination of the randomly selected item
+
+    //for loop to select a random question and splice it of the array
+    for (let i = 0; i < 1; i++) {
+        let arr = b[Math.floor(Math.random() * b.length)];
+
+        let index = b.indexOf(arr);
+
+        questions.splice(index, 1);
+
+        newArr.push(arr);
+
+        console.log(questions);
+        console.log(b);
+        console.log(newArr);
+    }
+
+        //the new output text
+        output.innerHTML = "";                  //remove text from old output text
+        output.innerHTML += "<p><b>" + randomPlayer + "</b>, </p>";
+        output.innerHTML += "<p>" + newArr + "</p>";
+    });
