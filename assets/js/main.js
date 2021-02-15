@@ -55,6 +55,7 @@ addPlayer.addEventListener("click", function () {
 
     input.setAttribute("id", playerId + i);
     input.setAttribute("name", "playerNameTag");
+    input.setAttribute("minlength", 2);
     input.type = "text";
     input.classList = "mb-2";
     var playerlist = document.getElementById("input-player-list");
@@ -82,6 +83,7 @@ buttonGetName.addEventListener("click", function () {
         var playerName = getPlayerNames[i].value;
         if(playerName.length < 2){
             getPlayerNames[i].setAttribute("class", "red-border mb-2");
+            alert("player name must be longer");
             return;
         } else{
         listPlayers.push(playerName);

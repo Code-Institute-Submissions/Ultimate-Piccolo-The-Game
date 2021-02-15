@@ -82,6 +82,10 @@ font-family: 'Montserrat', sans-serif;
     bottom: 1px;
     right: 0;
 }
+
+.red-border {
+   border-color: red; 
+}
 /* end card styling */
 
 /* footer */
@@ -104,7 +108,3 @@ footer a:hover {
     text-decoration: none;
 }
 /* end footer styling */
-
-.red-border {
-   border-color: red; 
-}
