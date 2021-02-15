@@ -80,7 +80,13 @@ buttonGetName.addEventListener("click", function () {
     //a loop to put all the player names into an array
     for (let i = 0; i < getPlayerNames.length; i++) {
         var playerName = getPlayerNames[i].value;
+        if(playerName.length < 2){
+            getPlayerNames[i].setAttribute("class", "red-border mb-2");
+            return;
+        } else{
         listPlayers.push(playerName);
+        getPlayerNames[i].setAttribute("class", "mb-2");
+        }
     }
     
     //turn array into a string and put it in the local storage

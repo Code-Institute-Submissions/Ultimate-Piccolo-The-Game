@@ -104,3 +104,7 @@ footer a:hover {
     text-decoration: none;
 }
 /* end footer styling */
+
+.red-border {
+   border-color: red; 
+}
