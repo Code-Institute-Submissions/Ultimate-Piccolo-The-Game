@@ -100,7 +100,7 @@ buttonGetName.addEventListener("click", function () {
     listPlayers['name8'] = player8;
 
     //turn object into a string and put it in the local storage
-    var listString = JSON.stringify(listPlayers)
+    var listString = JSON.stringify(listPlayers);
     localStorage.setItem('names', listString);
 
     toRemove.innerHTML = "";                  //remove html of input field
@@ -121,24 +121,20 @@ clickNextDiv.addEventListener("click", function () {
         "howdido",
         "pindakaas",
         "cheese",
-        "kinderen"]
+        "kinderen"];
 
-    var b = questions.slice()
+    var b = questions.slice();
     var newArr = []; //this is the desitination of the randomly selected item
 
     //for loop to select a random question and splice it of the array
     for (let i = 0; i < 1; i++) {
         let arr = b[Math.floor(Math.random() * b.length)];
 
-        let index = b.indexOf(arr);
-
-        questions.splice(index, 1);
-
-        newArr.push(arr);
-
-        console.log(questions);
-        console.log(b);
-        console.log(newArr);
+        let index = b.indexOf(arr);                             //find the index of the randomly selected question
+        questions.splice(index, 1);                             //splice the randomly selected question of the array
+        newArr.push(arr);                                       //push the randomly selected question to the new array to show it
+        var questionsString = JSON.stringify(questions);        //make a string of the new array
+        localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
     }
 
         //the new output text
