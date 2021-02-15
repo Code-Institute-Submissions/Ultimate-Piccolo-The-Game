@@ -115,13 +115,16 @@ clickNextDiv.addEventListener("click", function () {
     var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];     //select random player name
 
     //array with all the questions
-    var questions = ["hallo",
-        "peter",
-        "nectarine",
-        "howdido",
-        "pindakaas",
-        "cheese",
-        "kinderen"];
+    var questions = ["choose one other player, he or she will be your drinking budy for the rest of the game.",
+        "clean your drink if have you have ever been caught at cheating on a test.",
+        "take 3 sips if you have shoplifted something with a value of 10 euros or more.",
+        "take 1 sip of your drink for every time you use the word 'I' until the end of the game.",
+        "name your favourite music artist, the first person the name a song of this artist can give away 2 sips.",
+        "you start this game. Name a movie where Leonardo Dicaprio plays in. the first person who doesn't know a movie has to clean his/her drink.",
+        "give 3 sips to the person who you know the longest.",
+        "give 3 sips to the person who you know the shortest.",
+        "give 2 sips to the person who was the latest person to arrive at the party today.",
+        "you have 2 chooses: take 2 sips or let everyone else take 4 sips. What will it be?",];
     if (localStorage.getItem('theQuestions') === null) {
         var b = questions.slice();
         var newArr = []; //this is the desitination of the randomly selected item
