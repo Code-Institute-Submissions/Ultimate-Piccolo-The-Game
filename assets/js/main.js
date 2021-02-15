@@ -122,23 +122,26 @@ clickNextDiv.addEventListener("click", function () {
         "pindakaas",
         "cheese",
         "kinderen"];
+    if (localStorage.getItem('theQuestions') === null) {
+        var b = questions.slice();
+        var newArr = []; //this is the desitination of the randomly selected item
 
-    var b = questions.slice();
-    var newArr = []; //this is the desitination of the randomly selected item
+        //for loop to select a random question and splice it of the array
+        for (let i = 0; i < 1; i++) {
+            let arr = b[Math.floor(Math.random() * b.length)];
 
-    //for loop to select a random question and splice it of the array
-    for (let i = 0; i < 1; i++) {
-        let arr = b[Math.floor(Math.random() * b.length)];
-
-        let index = b.indexOf(arr);                             //find the index of the randomly selected question
-        questions.splice(index, 1);                             //splice the randomly selected question of the array
-        newArr.push(arr);                                       //push the randomly selected question to the new array to show it
-        var questionsString = JSON.stringify(questions);        //make a string of the new array
-        localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
+            let index = b.indexOf(arr);                             //find the index of the randomly selected question
+            questions.splice(index, 1);                             //splice the randomly selected question of the array
+            newArr.push(arr);                                       //push the randomly selected question to the new array to show it
+            var questionsString = JSON.stringify(questions);        //make a string of the new array
+            localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
+        }
+    } else {
+        //get array from local storage
     }
 
-        //the new output text
-        output.innerHTML = "";                  //remove text from old output text
-        output.innerHTML += "<p><b>" + randomPlayer + "</b>, </p>";
-        output.innerHTML += "<p>" + newArr + "</p>";
-    });
+    //the new output text
+    output.innerHTML = "";                  //remove text from old output text
+    output.innerHTML += "<p><b>" + randomPlayer + "</b>, </p>";
+    output.innerHTML += "<p>" + newArr + "</p>";
+});
