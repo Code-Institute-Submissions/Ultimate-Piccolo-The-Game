@@ -43,26 +43,26 @@ window.addEventListener("load", function () {
 var addPlayer = document.getElementById("addPlayer");
 
 addPlayer.addEventListener("click", function () {
-    if(document.getElementsByTagName("input").length < 8){
-    var input = document.createElement("input");
-    var toTheNextLine = document.createElement("br");
-    var playerId = "player";
-    var i = 0;
-    var x = document.getElementsByTagName("INPUT").length + 1;
+    if (document.getElementsByTagName("input").length < 8) {
+        var input = document.createElement("input");
+        var toTheNextLine = document.createElement("br");
+        var playerId = "player";
+        var i = 0;
+        var x = document.getElementsByTagName("INPUT").length + 1;
 
-    for (i = 0; i < x; i++) {
-        i;
+        for (i = 0; i < x; i++) {
+            i;
+        }
+
+        input.setAttribute("id", playerId + i);
+        input.type = "text";
+        input.classList = "mb-2";
+        var playerlist = document.getElementById("input-player-list");
+        playerlist.appendChild(input);
+        playerlist.appendChild(toTheNextLine);
+    } else {
+        alert("max total person");
     }
-
-    input.setAttribute("id", playerId + i);
-    input.type = "text";
-    input.classList = "mb-2";
-    var playerlist = document.getElementById("input-player-list");
-    playerlist.appendChild(input);
-    playerlist.appendChild(toTheNextLine);
-} else {
-    alert("max total person");
-}
 });
 
 //code to remove a player
@@ -110,11 +110,21 @@ buttonGetName.addEventListener("click", function () {
 //when the game starts, click on the screen and this will happen: 
 clickNextDiv.addEventListener("click", function () {
     var playerStoredString = localStorage.getItem('names');     //get player name data from local storage and put it in a string
-    var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object    var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
+    var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object  
     var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
     var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];     //select random player name
-    
+
+    //array with all the questions
+    var questions = ["hallo",
+        "peter",
+        "nectarine",
+        "howdido",
+        "pindakaas",
+        "cheese",
+        "kinderen"]
+
     //the new output text
     output.innerHTML = "";                  //remove text from old output text
-    output.innerHTML += "<p>" + randomPlayer + " hoi hoe gaat het met je" + "</p>";
+    output.innerHTML += "<p><b>" + randomPlayer + "</b>, </p>";
+    output.innerHTML += "<p>" + "this is where the questions will come." + "</p>";
 });
