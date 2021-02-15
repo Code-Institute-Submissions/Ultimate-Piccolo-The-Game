@@ -43,23 +43,23 @@ window.addEventListener("load", function () {
 var addPlayer = document.getElementById("addPlayer");
 
 addPlayer.addEventListener("click", function () {
-        var input = document.createElement("input");
-        var toTheNextLine = document.createElement("br");
-        var playerId = "player";
-        var i = 0;
-        var x = document.getElementsByTagName("INPUT").length + 1;
+    var input = document.createElement("input");
+    var toTheNextLine = document.createElement("br");
+    var playerId = "player";
+    var i = 0;
+    var x = document.getElementsByTagName("INPUT").length + 1;
 
-        for (i = 0; i < x; i++) {
-            i;
-        }
+    for (i = 0; i < x; i++) {
+        i;
+    }
 
-        input.setAttribute("id", playerId + i);
-        input.setAttribute("name", "playerNameTag");
-        input.type = "text";
-        input.classList = "mb-2";
-        var playerlist = document.getElementById("input-player-list");
-        playerlist.appendChild(input);
-        playerlist.appendChild(toTheNextLine);
+    input.setAttribute("id", playerId + i);
+    input.setAttribute("name", "playerNameTag");
+    input.type = "text";
+    input.classList = "mb-2";
+    var playerlist = document.getElementById("input-player-list");
+    playerlist.appendChild(input);
+    playerlist.appendChild(toTheNextLine);
 });
 
 //code to remove a player button
@@ -74,29 +74,16 @@ removePlayer.addEventListener("click", function () {
 var buttonGetName = document.getElementById("btnPlayer");
 
 //function to put the player names data into a variable
-buttonGetName.addEventListener("click", function () {    
-    var player1 = document.getElementById('player1').value;
-    var player2 = document.getElementById('player2').value;
-    var player3 = document.getElementById('player3').value;
-    var player4 = document.getElementById('player4').value;
-    var player5 = document.getElementById('player5').value;
-    var player6 = document.getElementById('player6').value;
-    var player7 = document.getElementById('player7').value;
-    var player8 = document.getElementById('player8').value;
-
-    //object to store the player names
-    var listPlayers = {};
-
-    listPlayers['name1'] = player1;
-    listPlayers['name2'] = player2;
-    listPlayers['name3'] = player3;
-    listPlayers['name4'] = player4;
-    listPlayers['name5'] = player5;
-    listPlayers['name6'] = player6;
-    listPlayers['name7'] = player7;
-    listPlayers['name8'] = player8;
-
-    //turn object into a string and put it in the local storage
+buttonGetName.addEventListener("click", function () {
+    var getPlayerNames = document.getElementsByName('playerNameTag');
+    var listPlayers = [];
+    //a loop to put all the player names into an array
+    for (let i = 0; i < getPlayerNames.length; i++) {
+        var playerName = getPlayerNames[i].value;
+        listPlayers.push(playerName);
+    }
+    
+    //turn array into a string and put it in the local storage
     var listString = JSON.stringify(listPlayers);
     localStorage.setItem('names', listString);
 
