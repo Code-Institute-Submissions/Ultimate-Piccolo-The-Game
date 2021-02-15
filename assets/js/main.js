@@ -33,13 +33,13 @@ window.addEventListener("load", function () {
         var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)]; //select random player name
 
         //output for when a player refreshes the page
-        output.innerHTML += "<p>" + randomPlayer + ", " + "</p>";
+        output.innerHTML += "<p><b>" + randomPlayer + "</b>, " + "</p>";
         output.innerHTML += `<p>The page was refreshed, so you and the person who has
         the phone in his/her hand have to take 2 sips. </p>`;
     }
 });
 
-//code to add a player
+//code to add a player button
 var addPlayer = document.getElementById("addPlayer");
 
 addPlayer.addEventListener("click", function () {
@@ -65,7 +65,7 @@ addPlayer.addEventListener("click", function () {
     }
 });
 
-//code to remove a player
+//code to remove a player button
 var removePlayer = document.getElementById("removePlayer");
 removePlayer.addEventListener("click", function () {
     $("#input-player-list input:last").remove();
@@ -124,10 +124,10 @@ clickNextDiv.addEventListener("click", function () {
         "give 3 sips to the person who you know the longest.",
         "give 3 sips to the person who you know the shortest.",
         "give 2 sips to the person who was the latest person to arrive at the party today.",
-        "you have 2 chooses: take 2 sips or let everyone else take 4 sips. What will it be?",];
+        "you have 2 chooses: take 2 sips or let everyone else take 4 sips. What will it be?"];
     if (localStorage.getItem('theQuestions') === null) {
         var b = questions.slice();
-        var newArr = []; //this is the desitination of the randomly selected item
+        var newArr = []; //this is the destination of the randomly selected item
 
         //for loop to select a random question and splice it of the array
         for (let i = 0; i < 1; i++) {
