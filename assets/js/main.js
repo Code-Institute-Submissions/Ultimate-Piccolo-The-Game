@@ -140,7 +140,20 @@ clickNextDiv.addEventListener("click", function () {
         var questionsStoredString = localStorage.getItem('theQuestions');     //get questions from local storage in string form
         var questionsStoredObject = JSON.parse(questionsStoredString);    //transform the questions data from a string to an object  
         var questions = Object.values(questionsStoredObject);  //transform the questions data from an object to an array
-        //add code to choose a random question from the local data
+        
+        var b = questions.slice();
+        var newArr = []; //this is the desitination of the randomly selected item
+
+        //for loop to select a random question and splice it of the array
+        for (let i = 0; i < 1; i++) {
+            let arr = b[Math.floor(Math.random() * b.length)];
+
+            let index = b.indexOf(arr);                             //find the index of the randomly selected question
+            questions.splice(index, 1);                             //splice the randomly selected question of the array
+            newArr.push(arr);                                       //push the randomly selected question to the new array to show it
+            var questionsString = JSON.stringify(questions);        //make a string of the new array
+            localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
+        }        
     }
 
     //the new output text
