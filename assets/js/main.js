@@ -43,7 +43,6 @@ window.addEventListener("load", function () {
 var addPlayer = document.getElementById("addPlayer");
 
 addPlayer.addEventListener("click", function () {
-    if (document.getElementsByTagName("input").length < 8) {
         var input = document.createElement("input");
         var toTheNextLine = document.createElement("br");
         var playerId = "player";
@@ -55,14 +54,12 @@ addPlayer.addEventListener("click", function () {
         }
 
         input.setAttribute("id", playerId + i);
+        input.setAttribute("name", "playerNameTag");
         input.type = "text";
         input.classList = "mb-2";
         var playerlist = document.getElementById("input-player-list");
         playerlist.appendChild(input);
         playerlist.appendChild(toTheNextLine);
-    } else {
-        alert("max total person");
-    }
 });
 
 //code to remove a player button
@@ -77,7 +74,7 @@ removePlayer.addEventListener("click", function () {
 var buttonGetName = document.getElementById("btnPlayer");
 
 //function to put the player names data into a variable
-buttonGetName.addEventListener("click", function () {
+buttonGetName.addEventListener("click", function () {    
     var player1 = document.getElementById('player1').value;
     var player2 = document.getElementById('player2').value;
     var player3 = document.getElementById('player3').value;
@@ -139,13 +136,13 @@ clickNextDiv.addEventListener("click", function () {
             var questionsString = JSON.stringify(questions);        //make a string of the new array
             localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
         }
-    } if(JSON.parse(localStorage.getItem('theQuestions')).length === 0){
+    } if (JSON.parse(localStorage.getItem('theQuestions')).length === 0) {
         var newArr = "you are done"; //this will be displayed when the array in local storage is out of items and the game is finished
     } else {
         var questionsStoredString = localStorage.getItem('theQuestions');       //get questions from local storage in string form
         var questionsStoredObject = JSON.parse(questionsStoredString);          //transform the questions data from a string to an object  
         var questions = Object.values(questionsStoredObject);                   //transform the questions data from an object to an array
-        
+
         var b = questions.slice();
         var newArr = []; //this is the desitination of the randomly selected item
 
@@ -158,7 +155,7 @@ clickNextDiv.addEventListener("click", function () {
             newArr.push(arr);                                       //push the randomly selected question to the new array to show it
             var questionsString = JSON.stringify(questions);        //make a string of the new array
             localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
-        }        
+        }
     }
 
     //the new output text
