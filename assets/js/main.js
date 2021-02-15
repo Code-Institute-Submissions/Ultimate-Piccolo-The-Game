@@ -136,10 +136,12 @@ clickNextDiv.addEventListener("click", function () {
             var questionsString = JSON.stringify(questions);        //make a string of the new array
             localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
         }
+    } if(JSON.parse(localStorage.getItem('theQuestions')).length === 0){
+        var newArr = "you are done"; //this will be displayed when the array in local storage is out of items and the game is finished
     } else {
-        var questionsStoredString = localStorage.getItem('theQuestions');     //get questions from local storage in string form
-        var questionsStoredObject = JSON.parse(questionsStoredString);    //transform the questions data from a string to an object  
-        var questions = Object.values(questionsStoredObject);  //transform the questions data from an object to an array
+        var questionsStoredString = localStorage.getItem('theQuestions');       //get questions from local storage in string form
+        var questionsStoredObject = JSON.parse(questionsStoredString);          //transform the questions data from a string to an object  
+        var questions = Object.values(questionsStoredObject);                   //transform the questions data from an object to an array
         
         var b = questions.slice();
         var newArr = []; //this is the desitination of the randomly selected item
