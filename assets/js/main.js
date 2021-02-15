@@ -137,7 +137,10 @@ clickNextDiv.addEventListener("click", function () {
             localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
         }
     } else {
-        //get array from local storage
+        var questionsStoredString = localStorage.getItem('theQuestions');     //get questions from local storage in string form
+        var questionsStoredObject = JSON.parse(questionsStoredString);    //transform the questions data from a string to an object  
+        var questions = Object.values(questionsStoredObject);  //transform the questions data from an object to an array
+        //add code to choose a random question from the local data
     }
 
     //the new output text
