@@ -158,3 +158,10 @@ clickNextDiv.addEventListener("click", function () {
     output.innerHTML += "<p><b>" + randomPlayer + "</b>, </p>";
     output.innerHTML += "<p>" + newArr + "</p>";
 });
+
+//the restart button
+var restart = document.getElementById("restartBtn");
+restart.addEventListener("click", function () {
+    localStorage.clear();
+    window.location.reload();
+});

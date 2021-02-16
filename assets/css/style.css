@@ -48,6 +48,12 @@ font-family: 'Montserrat', sans-serif;
 .btn-beer {
     border-radius: 15px;
 }
+
+#restartBtn {
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px;
+}
 /* end buttons */
 
 /* card styling */
