@@ -17,7 +17,7 @@ $(".btn24beer").on("click", function () {
     document.getElementById("btn-link").href = "https://www.paypal.com/paypalme/RaymondHuisman/10";
 });
 
-// code for the player and game page.
+// variables for the player and game page.
 var clickNextDiv = document.getElementById('startGame');    //select the whole card div
 var output = document.getElementById('gamePage');           //select the div where the game text will come in
 var toRemove = document.getElementById('playerPage');       //select the player names input div
@@ -47,20 +47,23 @@ window.addEventListener("load", function () {
 var addPlayer = document.getElementById("addPlayer");
 
 addPlayer.addEventListener("click", function () {
+    //create an input field
     var input = document.createElement("input");
+    //create a <br> element
     var toTheNextLine = document.createElement("br");
     var playerId = "player";
     var i = 0;
     var x = document.getElementsByTagName("INPUT").length + 1;
 
+    //give every input field an unique id using this loop
     for (i = 0; i < x; i++) {
         i;
     }
 
-    input.setAttribute("id", playerId + i);
-    input.setAttribute("name", "playerNameTag");
-    input.type = "text";
-    input.classList = "mb-2";
+    input.setAttribute("id", playerId + i);                         //set the id to the input field
+    input.setAttribute("name", "playerNameTag");                    //give the input field a name attribute
+    input.type = "text";                                            //give the input field a type attribute with a value of text 
+    input.classList = "mb-2";                                       //add some margin to the bottom of an input field
     var playerlist = document.getElementById("input-player-list");
     playerlist.appendChild(input);
     playerlist.appendChild(toTheNextLine);
@@ -74,7 +77,7 @@ removePlayer.addEventListener("click", function () {
 
 });
 
-//uploading data to local storage
+//make a variable of the start game button
 var buttonGetName = document.getElementById("btnPlayer");
 
 //function actived when start game button is pressed
@@ -84,6 +87,7 @@ buttonGetName.addEventListener("click", function () {
     //a loop to put all the player names into an array
     for (let i = 0; i < getPlayerNames.length; i++) {
         var playerName = getPlayerNames[i].value;
+        //if the name is shorter then 2 then make the border red and give an alert
         if (playerName.length < 2) {
             getPlayerNames[i].setAttribute("class", "red-border mb-2");
             alert("player name must be longer");
@@ -138,7 +142,7 @@ clickNextDiv.addEventListener("click", function () {
             localStorage.setItem("theQuestions", questionsString);  //upload the string to the local storage
         }
     } if (JSON.parse(localStorage.getItem('theQuestions')).length === 0) {
-        var newArr = "you are done"; //this will be displayed when the array in local storage is out of items and the game is finished
+        var newArr = "Press the reset button to start over"; //this will be displayed when the array in local storage is out of items and the game is finished
     } else {
         var questionsStoredString = localStorage.getItem('theQuestions');       //get questions from local storage in string form
         var questionsStoredObject = JSON.parse(questionsStoredString);          //transform the questions data from a string to an object  
