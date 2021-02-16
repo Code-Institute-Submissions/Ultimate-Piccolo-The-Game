@@ -36,6 +36,10 @@ window.addEventListener("load", function () {
         output.innerHTML += "<p><b>" + randomPlayer + "</b>, " + "</p>";
         output.innerHTML += `<p>The page was refreshed, so you and the person who has
         the phone in his/her hand have to take 2 sips. </p>`;
+
+        //make restart button visible 
+        var restart = document.getElementById("restartBtn");
+        restart.classList = "btn btn-sm btn-danger";
     }
 });
 
@@ -55,7 +59,6 @@ addPlayer.addEventListener("click", function () {
 
     input.setAttribute("id", playerId + i);
     input.setAttribute("name", "playerNameTag");
-    input.setAttribute("minlength", 2);
     input.type = "text";
     input.classList = "mb-2";
     var playerlist = document.getElementById("input-player-list");
@@ -74,29 +77,32 @@ removePlayer.addEventListener("click", function () {
 //uploading data to local storage
 var buttonGetName = document.getElementById("btnPlayer");
 
-//function to put the player names data into a variable
+//function actived when start game button is pressed
 buttonGetName.addEventListener("click", function () {
     var getPlayerNames = document.getElementsByName('playerNameTag');
     var listPlayers = [];
     //a loop to put all the player names into an array
     for (let i = 0; i < getPlayerNames.length; i++) {
         var playerName = getPlayerNames[i].value;
-        if(playerName.length < 2){
+        if (playerName.length < 2) {
             getPlayerNames[i].setAttribute("class", "red-border mb-2");
             alert("player name must be longer");
             return;
-        } else{
-        listPlayers.push(playerName);
-        getPlayerNames[i].setAttribute("class", "mb-2");
+        } else {
+            listPlayers.push(playerName);
+            getPlayerNames[i].setAttribute("class", "mb-2");
         }
     }
-    
+
     //turn array into a string and put it in the local storage
     var listString = JSON.stringify(listPlayers);
     localStorage.setItem('names', listString);
 
     toRemove.innerHTML = "";                  //remove html of input field
 
+    //make restart button visible 
+    var restart = document.getElementById("restartBtn");
+    restart.classList = "btn btn-sm btn-danger";
 });
 
 //when the game starts, click on the screen and this will happen: 

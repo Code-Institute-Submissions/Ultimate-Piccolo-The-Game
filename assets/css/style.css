@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-/* general styling */
+/* general styling and functions */
 body {
 font-family: 'Montserrat', sans-serif;
 }
@@ -13,6 +13,10 @@ font-family: 'Montserrat', sans-serif;
 .link-styling:hover {
     color: #000000;
     text-decoration-color: #000000;
+}
+
+.hide {
+    display: none;
 }
 /* end general styling */
 
