@@ -72,9 +72,11 @@ addPlayer.addEventListener("click", function () {
 //code to remove a player button
 var removePlayer = document.getElementById("removePlayer");
 removePlayer.addEventListener("click", function () {
+    var x = document.getElementsByTagName('INPUT').length;
+  if ( x > 1 ) {
     $("#input-player-list input:last").remove();
     $("#input-player-list br:last").remove();
-
+  }
 });
 
 //make a variable of the start game button
