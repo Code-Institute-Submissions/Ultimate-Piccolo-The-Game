@@ -111,14 +111,7 @@ buttonGetName.addEventListener("click", function () {
     restart.classList = "btn btn-sm btn-danger";
 });
 
-//when the game starts, click on the screen and this will happen: 
-clickNextDiv.addEventListener("click", function () {
-    var playerStoredString = localStorage.getItem('names');     //get player name data from local storage and put it in a string
-    var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object  
-    var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
-    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];     //select random player name
-
-    //array with all the questions
+//array with all the questions
     var questions = ["choose one other player, he or she will be your drinking budy for the rest of the game.",
         "clean your drink if have you have ever been caught at cheating on a test.",
         "take 3 sips if you have shoplifted something with a value of 10 euros or more.",
@@ -129,7 +122,15 @@ clickNextDiv.addEventListener("click", function () {
         "give 3 sips to the person who you know the shortest.",
         "give 2 sips to the person who was the latest person to arrive at the party today.",
         "you have 2 chooses: take 2 sips or let everyone else take 4 sips. What will it be?"];
-    if (localStorage.getItem('theQuestions') === null) {
+
+//when the game starts, click on the screen and this will happen: 
+clickNextDiv.addEventListener("click", function () {
+    var playerStoredString = localStorage.getItem('names');     //get player name data from local storage and put it in a string
+    var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object  
+    var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
+    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];     //select random player name
+
+        if (localStorage.getItem('theQuestions') === null) {
         var b = questions.slice();
         var newArr = []; //this is the destination of the randomly selected item
 
