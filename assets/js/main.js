@@ -111,7 +111,14 @@ buttonGetName.addEventListener("click", function () {
     restart.classList = "btn btn-sm btn-danger";
 });
 
-//array with all the questions
+//when the game starts, click on the screen and this will happen: 
+clickNextDiv.addEventListener("click", function () {
+    var playerStoredString = localStorage.getItem('names');     //get player name data from local storage and put it in a string
+    var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object  
+    var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
+    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];     //select random player name
+    
+    //array with all the questions
     var questions = ["choose one other player, he or she will be your drinking budy for the rest of the game.",
         "clean your drink if have you have ever been caught at cheating on a test.",
         "take 3 sips if you have shoplifted something with a value of 10 euros or more.",
@@ -131,15 +138,16 @@ buttonGetName.addEventListener("click", function () {
         "arm wrestle fight tournament! Everybody has to do it, do KO games until their is 1 person left. He or she can give away 10 sips.",
         "stand on your hand and name at least 10 auto brands. If you compleet the challenge you can give away 5 sips, otherwise you have to take them.",
         "which eye color does everyone has? Everyone close your eyes and if the challenger is incorrect then he or she can only drink with the left hand.",
-        "just take a shot, you look like you need one."
-    ];
-
-//when the game starts, click on the screen and this will happen: 
-clickNextDiv.addEventListener("click", function () {
-    var playerStoredString = localStorage.getItem('names');     //get player name data from local storage and put it in a string
-    var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object  
-    var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
-    var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];     //select random player name
+        "just take a shot, you look like you need one.",
+        "how in this room has had the most drinks? If you are correct you can give away 3 sips otherwise you have to take them.",
+        "do a tequila shot with salt and lemon. If you dont have tequilla replace it with the strongest drink available.",
+        "sing a song! The first person to guess the name of it can give away 2 sips.",
+        "if it is before 12 o'clock take 2 sips, is it after take 5 sips and give everyone a glass of water.",
+        "do a game of rock paper scissors with the person to your left. The loser cleans his or her drink.",
+        "BATTLE between you and the person to your right. take turns and name as many proffesional football player as you know until one person is out. The loser cleans both the drinks.",
+        "you can make a rule that everyone has to follow, so be creative!",
+        "name the alphabet backward within 60 seconds. If you fail you have to take 2 sips.",
+        "call the last person you have called and ask if he or she wants to join the party."];
 
         if (localStorage.getItem('theQuestions') === null) {
         var b = questions.slice();
