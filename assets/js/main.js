@@ -147,7 +147,17 @@ clickNextDiv.addEventListener("click", function () {
         "BATTLE between you and the person to your right. take turns and name as many proffesional football player as you know until one person is out. The loser cleans both the drinks.",
         "you can make a rule that everyone has to follow, so be creative!",
         "name the alphabet backward within 60 seconds. If you fail you have to take 2 sips.",
-        "call the last person you have called and ask if he or she wants to join the party."];
+        "call the last person you have called and ask if he or she wants to join the party.",
+        "let the person to your left look through your phone for 5 minutes or order some food for the crew.",
+        "order some food for the collective.",
+        "make a cocktail for the person to your left. If he or she doesn't like it you have to make the same cocktail and clean it.",
+        "you can press your thumb anytime you want on the table. The last one to do the same has to take 3 sips.",
+        "grab some cards and play a quick game of fuck the dealer. You start as the dealer.",
+        "chug a beer in less than 10 seconds.",
+        "tell us the biggest thing you have ever stolen. If you refuse take 5 sips.",
+        "take 2 sip if you ever blacked out while being drunk.",
+        "do 10 push ups. If you fail take 3 sips."
+    ];
 
         if (localStorage.getItem('theQuestions') === null) {
         var b = questions.slice();
