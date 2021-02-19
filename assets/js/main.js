@@ -156,8 +156,22 @@ clickNextDiv.addEventListener("click", function () {
         "chug a beer in less than 10 seconds.",
         "tell us the biggest thing you have ever stolen. If you refuse take 5 sips.",
         "take 2 sip if you ever blacked out while being drunk.",
-        "do 10 push ups. If you fail take 3 sips."
-    ];
+        "do 10 push ups. If you fail you have to take 3 sips.",
+        "go planking for 1 minute. If you fail you have to take 3 sips.",
+        "challege somebody in this room. Do the invisible chair and the first person to fall has to take 5 sips.",
+        "you are not allowed to say anything for the next 5 minutes, every time you fail you have to take 2 sips.",
+        "if you know the person to your right longer then the person to your left you have to take 2 sips.",
+        "name all the birthdays of all the players, take 1 sip for every incorrect answer.",
+        "nobody is allowed to respons to your questions, the first person who does respons has to clean his/her drink.",
+        "guess the favorite song of the player to your right. If you are wrong you have to take 3 sips.",
+        "guess the favorite video game of the player to your left. If you are wrong you have to take 3 sips.",
+        "ask a question to someone in this room you always wanted to ask. If he or she refuses to answer he/she has to take 4 sips.",
+        "just give 10 sips alway, just not to the same person.",
+        "tell everyone your best joke, if nobody laughs you have to take 3 sips.",
+        "bring some food to the table. If there is no food in the house, you have to order something.",
+        "name 10 countries in Africa, if you fail take 4 sips.",
+        "name the capital of South Korea.",
+        "name the capital of Brazil."];
 
         if (localStorage.getItem('theQuestions') === null) {
         var b = questions.slice();
