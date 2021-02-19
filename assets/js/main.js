@@ -116,12 +116,23 @@ buttonGetName.addEventListener("click", function () {
         "clean your drink if have you have ever been caught at cheating on a test.",
         "take 3 sips if you have shoplifted something with a value of 10 euros or more.",
         "take 1 sip of your drink for every time you use the word 'I' until the end of the game.",
-        "name your favourite music artist, the first person the name a song of this artist can give away 2 sips.",
-        "you start this game. Name a movie where Leonardo Dicaprio plays in. the first person who doesn't know a movie has to clean his/her drink.",
+        "game: name your favourite music artist. The first person that names a song of this artist can give away 2 sips.",
+        "you start this game. Name a movie where Leonardo Dicaprio plays in. the first person who doesn't know a movie has to clean his/her drink. Go in circles to the left.",
         "give 3 sips to the person who you know the longest.",
         "give 3 sips to the person who you know the shortest.",
         "give 2 sips to the person who was the latest person to arrive at the party today.",
-        "you have 2 chooses: take 2 sips or let everyone else take 4 sips. What will it be?"];
+        "you have 2 chooses: take 2 sips or let everyone else take 4 sips. What will it be?",
+        "clean your drink if you have had a positive corona test",
+        "take 2 sips if you used corona as an excuse to skip school/work",
+        "take 3 sips if you have finished high school",
+        "you have 2 chooses: do a dance on a song to your own choose or clean your drink.",
+        "do a vampire shot. No ifs and no buts, just do it.",
+        "race someone to your own choose for a 50m print. The loser takes 5 sips.",
+        "arm wrestle fight tournament! Everybody has to do it, do KO games until their is 1 person left. He or she can give away 10 sips.",
+        "stand on your hand and name at least 10 auto brands. If you compleet the challenge you can give away 5 sips, otherwise you have to take them.",
+        "which eye color does everyone has? Everyone close your eyes and if the challenger is incorrect then he or she can only drink with the left hand.",
+        "just take a shot, you look like you need one."
+    ];
 
 //when the game starts, click on the screen and this will happen: 
 clickNextDiv.addEventListener("click", function () {
