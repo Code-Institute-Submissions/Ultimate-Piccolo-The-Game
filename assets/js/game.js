@@ -20,8 +20,9 @@ window.addEventListener("load", function () {
         
         //make restart button visible 
         var restart = document.getElementById("restartBtn");
-        restart.classList = "btn btn-sm btn-danger restartBtn-corner";
+        restart.classList = "btn btn-sm btn-danger";
 
+        //open modal with the would you like to continue question
         $('#ContinueModal').modal('show');
     }
 });
@@ -91,7 +92,7 @@ buttonGetName.addEventListener("click", function () {
 
     //make restart button visible 
     var restart = document.getElementById("restartBtn");
-    restart.classList = "btn btn-sm btn-danger restartBtn-corner";
+    restart.classList = "btn btn-sm btn-danger";
 });
 
 //when the game starts, click on the screen and this will happen: 
@@ -201,6 +202,13 @@ clickNextDiv.addEventListener("click", function () {
 //the restart button
 var restart = document.getElementById("restartBtn");
 restart.addEventListener("click", function () {
+    localStorage.clear();
+    window.location.reload();
+});
+
+//the restart button in the modal
+var restartModal = document.getElementById("restartBtnModal");
+restartModal.addEventListener("click", function () {
     localStorage.clear();
     window.location.reload();
 });
