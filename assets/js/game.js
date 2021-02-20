@@ -17,10 +17,12 @@ window.addEventListener("load", function () {
         output.innerHTML += "<p><b>" + randomPlayer + "</b>, " + "</p>";
         output.innerHTML += `<p>The page was refreshed, so you and the person who has
         the phone in his/her hand have to take 2 sips. </p>`;
-
+        
         //make restart button visible 
         var restart = document.getElementById("restartBtn");
-        restart.classList = "btn btn-sm btn-danger";
+        restart.classList = "btn btn-sm btn-danger restartBtn-corner";
+
+        $('#ContinueModal').modal('show');
     }
 });
 
@@ -54,10 +56,10 @@ addPlayer.addEventListener("click", function () {
 var removePlayer = document.getElementById("removePlayer");
 removePlayer.addEventListener("click", function () {
     var x = document.getElementsByTagName('INPUT').length;
-  if ( x > 1 ) {
-    $("#input-player-list input:last").remove();
-    $("#input-player-list br:last").remove();
-  }
+    if (x > 1) {
+        $("#input-player-list input:last").remove();
+        $("#input-player-list br:last").remove();
+    }
 });
 
 //make a variable of the start game button
@@ -89,7 +91,7 @@ buttonGetName.addEventListener("click", function () {
 
     //make restart button visible 
     var restart = document.getElementById("restartBtn");
-    restart.classList = "btn btn-sm btn-danger";
+    restart.classList = "btn btn-sm btn-danger restartBtn-corner";
 });
 
 //when the game starts, click on the screen and this will happen: 
@@ -98,7 +100,7 @@ clickNextDiv.addEventListener("click", function () {
     var playerStoredObject = JSON.parse(playerStoredString);    //transform the player name data from a string to an object  
     var playerStoredArray = Object.values(playerStoredObject);  //transform the player name data from an object to an array
     var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)];     //select random player name
-    
+
     //array with all the questions
     var questions = ["choose one other player, he or she will be your drinking budy for the rest of the game.",
         "clean your drink if have you have ever been caught at cheating on a test.",
@@ -154,7 +156,7 @@ clickNextDiv.addEventListener("click", function () {
         "name the capital of South Korea.",
         "name the capital of Brazil."];
 
-        if (localStorage.getItem('theQuestions') === null) {
+    if (localStorage.getItem('theQuestions') === null) {
         var b = questions.slice();
         var newArr = []; //this is the destination of the randomly selected item
 
