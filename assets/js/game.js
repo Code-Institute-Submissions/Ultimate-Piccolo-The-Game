@@ -29,6 +29,9 @@ window.addEventListener("load", function () {
 
         //open modal with the would you like to continue question
         $('#ContinueModal').modal('show');
+
+        //turn the cursor into a pointer
+        document.getElementById("startGame").style.cursor = "pointer";
     }
 });
 
@@ -102,6 +105,9 @@ buttonGetName.addEventListener("click", function () {
     //make the game page visable
     var gameView = document.getElementById("gamePage");
     gameView.classList.remove("hide");
+
+    //turn the cursor into a pointer
+    document.getElementById("startGame").style.cursor = "pointer";
 });
 
 //when the game starts, click on the screen and this will happen: 
