@@ -39,7 +39,7 @@
                     <div id="startGame" class="card-layout-playernames px-3 py-4">
                         <div id="playerPage">
                             <!--title card-->
-                            <div class="inline-addplayer">
+                            <div class="inline-titles">
                                 <h1>Players:</h1>
                             </div>
                             <div class="float-right">
@@ -58,9 +58,17 @@
                             <button class="btn yellow" id="btnPlayer" type="button">Start the game!</button>
                             <p class="mt-1">Remember: always drink responsable!!!</p>
                         </div>
-                        <div id="gamePage" class="card-p-font-bigger">
-                            <p id="output-player"></p>
-                            <p id="output-card"></p>
+                        <div id="gamePage" class="card-p-font-bigger hide">
+                            <div class="inline-titles">
+                                <p id="output-player"></p>
+                            </div>
+                            <div class="float-right">
+                                <a href="#PlayersModal" data-toggle="modal">
+                                    <i class="far fa-question-circle fa-2x"></i>
+                                </a>
+                            </div>
+                            <br>
+                            <p id="output-card" class="mt-3"></p>
                         </div>
                         <div>
                             <button type="button" class="btn btn-sm btn-danger hide" id="restartBtn">restart</button>
@@ -194,8 +202,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <!--text with how to add and delete players-->
-                        <p>You can add players and delete them by clicking on the 
-                            buttons and adding the names. When you have added all the 
+                        <p>
+                            You can add players and delete them by clicking on the
+                            buttons and adding the names. When you have added all the
                             players click on "start the game!" to begin.
                         </p>
                         <!--button to close the modal-->

@@ -18,10 +18,6 @@ font-family: 'Montserrat', sans-serif;
 .hide {
     display: none;
 }
-
-.float-right {
-    float: right;
-}
 /* end general styling */
 
 /* colors */
@@ -101,7 +97,7 @@ font-family: 'Montserrat', sans-serif;
    border-color: red; 
 }
 
-.inline-addplayer {
+.inline-titles {
     float: left;
     display: inline;
     width: 70%;

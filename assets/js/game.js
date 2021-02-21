@@ -1,8 +1,7 @@
 // variables for the player and game page.
 var clickNextDiv = document.getElementById('startGame');    //select the whole card div
-var outputplayer = document.getElementById('output-player');           //select the div where the game text will come in
-var output = document.getElementById('gamePage');           //select the div where the game text will come in
-var outputcard = document.getElementById('output-card');           //select the div where the game text will come in
+var outputPlayer = document.getElementById('output-player');           //select the p element where the player name will come
+var outputQuestion = document.getElementById('output-card');           //select the p element where the question will be
 var toRemove = document.getElementById('playerPage');       //select the player names input div
 
 //code for when screen loads
@@ -16,10 +15,14 @@ window.addEventListener("load", function () {
         var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)]; //select random player name
 
         //output for when a player refreshes the page
-        outputplayer.innerHTML += "<b>" + randomPlayer + "</b>, ";
-        outputcard.innerHTML += `The page was refreshed, so you and the person who has
+        outputPlayer.innerHTML += "<b>" + randomPlayer + "</b>, ";
+        outputQuestion.innerHTML += `The page was refreshed, so you and the person who has
         the phone in his/her hand have to take 2 sips.`;
-        
+
+        //make the game page visable
+        var gameView = document.getElementById("gamePage");
+        gameView.classList.remove("hide");
+
         //make restart button visible 
         var restart = document.getElementById("restartBtn");
         restart.classList = "btn btn-sm btn-danger";
@@ -95,6 +98,10 @@ buttonGetName.addEventListener("click", function () {
     //make restart button visible 
     var restart = document.getElementById("restartBtn");
     restart.classList = "btn btn-sm btn-danger";
+
+    //make the game page visable
+    var gameView = document.getElementById("gamePage");
+    gameView.classList.remove("hide");
 });
 
 //when the game starts, click on the screen and this will happen: 
@@ -196,10 +203,10 @@ clickNextDiv.addEventListener("click", function () {
     }
 
     //the new output text
-    outputplayer.innerHTML = "";                  //remove text from old output text
-    outputcard.innerHTML = "";                  //remove text from old output text
-    outputplayer.innerHTML += "<b>" + randomPlayer + "</b>, ";
-    outputcard.innerHTML += "<p>" + newArr + "</p>";
+    outputPlayer.innerHTML = "";                                    //remove the old name from the previous round
+    outputQuestion.innerHTML = "";                                  //remove the old question from the previous round
+    outputPlayer.innerHTML += "<b>" + randomPlayer + "</b>, ";      //add the new name
+    outputQuestion.innerHTML += "<p>" + newArr + "</p>";            //add the new question
 });
 
 //the restart button who will open the continue modal
