@@ -1,6 +1,8 @@
 // variables for the player and game page.
 var clickNextDiv = document.getElementById('startGame');    //select the whole card div
+var outputplayer = document.getElementById('output-player');           //select the div where the game text will come in
 var output = document.getElementById('gamePage');           //select the div where the game text will come in
+var outputcard = document.getElementById('output-card');           //select the div where the game text will come in
 var toRemove = document.getElementById('playerPage');       //select the player names input div
 
 //code for when screen loads
@@ -14,9 +16,9 @@ window.addEventListener("load", function () {
         var randomPlayer = playerStoredArray[Math.floor(Math.random() * playerStoredArray.length)]; //select random player name
 
         //output for when a player refreshes the page
-        output.innerHTML += "<p><b>" + randomPlayer + "</b>, " + "</p>";
-        output.innerHTML += `<p>The page was refreshed, so you and the person who has
-        the phone in his/her hand have to take 2 sips. </p>`;
+        outputplayer.innerHTML += "<b>" + randomPlayer + "</b>, ";
+        outputcard.innerHTML += `The page was refreshed, so you and the person who has
+        the phone in his/her hand have to take 2 sips.`;
         
         //make restart button visible 
         var restart = document.getElementById("restartBtn");
@@ -194,9 +196,10 @@ clickNextDiv.addEventListener("click", function () {
     }
 
     //the new output text
-    output.innerHTML = "";                  //remove text from old output text
-    output.innerHTML += "<p><b>" + randomPlayer + "</b>, </p>";
-    output.innerHTML += "<p>" + newArr + "</p>";
+    outputplayer.innerHTML = "";                  //remove text from old output text
+    outputcard.innerHTML = "";                  //remove text from old output text
+    outputplayer.innerHTML += "<b>" + randomPlayer + "</b>, ";
+    outputcard.innerHTML += "<p>" + newArr + "</p>";
 });
 
 //the restart button who will open the continue modal
