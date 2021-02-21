@@ -18,6 +18,10 @@ font-family: 'Montserrat', sans-serif;
 .hide {
     display: none;
 }
+
+.float-right {
+    float: right;
+}
 /* end general styling */
 
 /* colors */
@@ -95,6 +99,12 @@ font-family: 'Montserrat', sans-serif;
 
 .red-border {
    border-color: red; 
+}
+
+.inline-addplayer {
+    float: left;
+    display: inline;
+    width: 70%;
 }
 /* end card styling */
 
