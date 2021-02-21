@@ -209,6 +209,13 @@ clickNextDiv.addEventListener("click", function () {
     outputQuestion.innerHTML += "<p>" + newArr + "</p>";            //add the new question
 });
 
+//the question mark link who will open the game modal
+var gameModal = document.getElementById("GameModalId");
+gameModal.addEventListener("click", function () {
+    event.stopPropagation();            //when you press the button the next question won't be loaded
+    $("#GameModal").modal();        //open the game modal
+});
+
 //the restart button who will open the continue modal
 var restart = document.getElementById("restartBtn");
 restart.addEventListener("click", function () {
