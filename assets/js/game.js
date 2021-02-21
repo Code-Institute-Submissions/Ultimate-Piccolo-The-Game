@@ -199,11 +199,11 @@ clickNextDiv.addEventListener("click", function () {
     output.innerHTML += "<p>" + newArr + "</p>";
 });
 
-//the restart button
+//the restart button who will open the continue modal
 var restart = document.getElementById("restartBtn");
 restart.addEventListener("click", function () {
-    localStorage.clear();
-    window.location.reload();
+    event.stopPropagation();            //when you press the button the next question won't be loaded
+    $("#ContinueModal").modal();        //open the continue modal
 });
 
 //the restart button in the modal
