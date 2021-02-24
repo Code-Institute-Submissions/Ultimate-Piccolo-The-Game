@@ -1,13 +1,3 @@
-## the footer
-#### the footer is made with help of the CodeInstitute CV project.
-
-## color chooses
-we have choosen for the yellow color (#F7DE6A) because it is a drinking game and beer is yellow.
-The dark color we use is #343A40. To decide the 3th color we used Adobe color wheel to find the oppesite color of
-the yellow color. That color was the purple #6A6BF7.
-
----------------------------------
-
 ![Ultimate Piccalo: the game logo](assets/images/logo.png)
 
 ## Table of Contents
@@ -23,7 +13,6 @@ the yellow color. That color was the purple #6A6BF7.
     -   [Design](#design)
 -   **[Features](#features)**
     -   [Diffent Sections](#different-sections)
-    -   [Colors](#colors)
     -   [Save Function](#save-function)
     -   [Add and delete players function](#add-and-delete-players-function)
     -   [Reset Game](#reset-game)
@@ -33,9 +22,8 @@ the yellow color. That color was the purple #6A6BF7.
 -   **[Testing](#testing)**
     -   [Manual Testing](#manual-testing)
     -   [User Testing](#user-testing)
-    -   [Known Bugs](#known-bugs)
 -   **[Upcoming Features](#upcoming-features)**
--   **[Aknowledgments](#aknowledgments)**
+-   **[Acknowledgments](#acknowledgments)**
 
 ---
 
@@ -111,10 +99,22 @@ These goals are accomplished in the following way:
 The wireframe was made by hand. The final version of the wireframes can be found [here](assets/images/readme/wireframe.png)
 
 ### Design
+When the game was made the design was focussed on mobile first. down below you can find the 3 main design challenges: 
 
-When the game was made the design was focussed on mobile first. the following things got some extra attention: 
 
--   What should I put here?
+#### Fonts
+I used [Google Fonts](https://fonts.google.com/) to select a font type. I looked for a font with a lot of rounding who was nice to look at. 
+I ended up using Montserrat because it is easy to read and matches the roundings of the card in which the text is displayed.
+
+#### colors
+The yellow color (#F7DE6A) was manually selected because it is the color of beer and then the oppesite color (the blue/purple color #F7DE6A) was selected with the help of [Adobe Color Wheel](https://color.adobe.com/nl/create/color-wheel).
+In the picure below you can see the home screen with the 2 main colors:
+
+![home screen](assets/images/readme/home-screen.png)
+
+#### Logo
+The logo was made with help of [Canva](https://canva.com). I used a simplistic elements simplic and the same font I used on the site. 
+I reason why I chose to make it simple is to show off some peace and make it nice to look at. 
 
 ---
 
@@ -135,13 +135,6 @@ The website can be divided into four main sections:
 
 Sections are responsive and have dynamic element with them. 
 
-### colors
-
-The yellow color was manually selected because it is the color of beer and then the oppesite color (the pink color) was selected with the help of [Adobe Color Wheel](https://color.adobe.com/nl/create/color-wheel).
-In the picure below you can see the home screen with the 2 main colors:
-
-![home screen](assets/images/readme/home-screen.png)
-
 ### Save Function
 
 The game make use of the local storage so it is not a problem when players refresh the page.
@@ -154,7 +147,10 @@ In the picture down below you can see the local storage with the 2 saved arrays:
 
 ### Add and delete players function
 
-In the players section there are 2 buttons to add and delete players. The add button is made with the help of a "for loop" and the delete button deletes the newest input field.
+In the players section there are 2 buttons to add and delete players. The add button is made with the help of a "for loop" and the delete button deletes the newest input field. 
+In the picture down below you can see the 2 buttons, the "add player" and "remove player" buttons:
+
+![add and remove buttons](assets/images/readme/players-section.png)
 
 ### Reset Game
 
@@ -166,7 +162,7 @@ When the page is refeshed the player will get the same question if he or she wou
 ### Responsive Design
 
 This application is build mobile first because it will mostly be used on small gatherings where most people do not have a laptop with them.
-With the help of Bootstrap the screens on different screen sizes could easily be editted.
+With the help of Bootstrap the screens on different screen sizes could easily be editted. The website is customized for all screen sizes with some help to the Google Chrome's dev tools bugs could easily be fixed.
 
 ---
 
@@ -174,7 +170,7 @@ With the help of Bootstrap the screens on different screen sizes could easily be
 
 -   HTML
 -   CSS
--   Javascript
+-   JavaScript
 -   [JQuery](https://jquery.com/)
 -   [Bootstrap](https://getbootstrap.com/)
 ---
@@ -192,26 +188,31 @@ With the help of Bootstrap the screens on different screen sizes could easily be
 
 ### Manual Testing
 
-The site was tested on diffent platforms and browsers to ensure a good display and functionality across different screen sizes.
+When the user get the home page he/she can read the first card that comes on the screen. The text that is shown to the user is an intro to the game.
+The user also gets the choose to go either to the game page of donate something to the creator. 
 
-Google Chrome's dev tools were used extensively for debugging.
+When the user chooses for donating to the creator a modal will pop up. This modal asks the user if he or she wants to donate 1, 6 or 24 beer(s). 
+When the user presses the button with the amout of beers he or she want to donate the play now button will go to Paypal with that amout preset.
 
-Furthermore the site was tested by 5 friends of my to see if anything was unclear. This resulted in some feedback which I fixed.
+When the user chooses to go to the game page they will first see the "players section" if it is their first visit. Here they can fill in the player names.
+They can easily add and remove player names by pressing the "add player" or "remove player" button. If it is not clear to the user he or she can also click on the question mark icon.
+A modal will come up with an explanation on how the game works and how that specific section works. When the user presses the "start the game!" button the game will start.
+
+The user then will see a screen with first one randomly selected player from the players who manually where put into the website and then a randomly selected question/task he or she has to complete.
+By pressing on the card the next question and player will randomly be selected. There is also a reset button in the right down corner if the user would like to reset the game. A modal will then pop up with 
+the question if the user is sure about resetting the game. There is also another question mark icon in the top right corner that triggers a modal with how to play the game. 
+
 
 ### User Testing
 
-When the program was advanced enough to be usable, several users were asked to manipulate it to assess their experience and comfort with it. The following changes came from this round of testing:
+The website is fully working and users with no technical knowage can easily test it. I asked 3 friends if anything was unclear to them when they used the site.
+This resulted in the following changes:
 
 -   Added a reset button to make the user experience better
 -   Added information modals to the game to answer all the main questions
 -   changed the home page to be more focussed on the game and not on donating
 -   When the page refreshes the user will get a question if he or she would like to continue
 
-### Known Bugs
-
--   When somebody want to donate a curtain amout but instead of clicking on the number of beers first dirrectly presses the Paypal button the will come on my paypal account where they can type in their own number they want to donate. This is not that
-
----
 
 ## Upcoming features
 
@@ -223,14 +224,18 @@ A number of new features will be implemented in the future.
 
 -   A Function where people can make their own question packs with their own questions and pre made questions.
 
+-   Make it possible to delete a specific player instead of only the last one entered.
+
 ---
 
-## Aknowledgments
-
-[The following Code Institute student project](https://github.com/jumboduck/CV-Builder) helped me in to create this readme file.
+## Acknowledgments
 
 Thanks to [Felipe Alarcon](https://github.com/felipe-alarcon) for helping me with brainstorming on how to code curtain things and for helping me reflect on my own work.
+
+[The following Code Institute student project](https://github.com/jumboduck/CV-Builder) helped me in to create this readme file.
 
 Thanks [Slack Overflow](https://stackoverflow.com/) for giving me code idea's when I was not curtain on how to code something.
 
 Thanks [Code Pen IO](https://codepen.io/rsherry/pen/QwoqyO) for giving me tips on how to make the add and remove players Javascript code.
+
+The footer was made with help of a previous project about making a [CV](https://github.com/waterrot/CV).

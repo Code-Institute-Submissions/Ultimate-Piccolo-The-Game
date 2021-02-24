@@ -36,6 +36,7 @@ window.addEventListener("load", function () {
 });
 
 //code to add a player button
+// I used some code from "Code Pen IO" as inspiration for this. The link to this site is https://codepen.io/rsherry/pen/QwoqyO
 var addPlayer = document.getElementById("addPlayer");
 
 addPlayer.addEventListener("click", function () {
