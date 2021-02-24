@@ -22,11 +22,11 @@ the yellow color. That color was the purple #6A6BF7.
     -   [Wireframes](#wireframes)
     -   [Design](#design)
 -   **[Features](#features)**
-    -   [CV Sections](#cv-sections)
-    -   [Themes](#themes)
+    -   [Diffent Sections](#different-sections)
+    -   [Colors](#colors)
     -   [Save Function](#save-function)
-    -   [Download as PDF](#download-as-pdf)
-    -   [Reset](#reset)
+    -   [Add and delete players function](#add-and-delete-players-function)
+    -   [Reset Game](#reset-game)
     -   [Responsive Design](#responsive-design)
 -   **[Technologies](#technologies)**
 -   **[Tools](#tools)**
@@ -35,7 +35,6 @@ the yellow color. That color was the purple #6A6BF7.
     -   [User Testing](#user-testing)
     -   [Known Bugs](#known-bugs)
 -   **[Upcoming Features](#upcoming-features)**
--   **[Code Notes](#code-notes)**
 -   **[Aknowledgments](#aknowledgments)**
 
 ---
@@ -44,7 +43,7 @@ the yellow color. That color was the purple #6A6BF7.
 
 "Ultimate Piccalo: The Game" is a drinking game that friends and/or family can use when they want to have a lovely night. The game asks for the names of the people who want to play and it then give these players randomly a question or task he or she has to compleet. These questions involve drinking so remember to drink responsible! Next to the game there is also an option to donate to the creator in the form of beers.
 
-![responsive site](assets/images/piccalo-responsive.png)
+![responsive site](assets/images/readme/piccalo-responsive.png)
 
 ---
 
@@ -105,85 +104,69 @@ These goals are accomplished in the following way:
 -   In the footer of the site the email addresse of the creator is visible so people can get in touch.
 -   When the players are playing a game the reset button will be visible under in the screen.
 -   when the player is on the "add players" screen there is an option to add and delete players using a button. 
--   All the data is stored in local storage so when a player refreshes the page the game won't be reset.
+-   All the data is stored in local storage so when a player refreshes the page the game won't be
 
 ### Wireframes
 
-Wireframes were created with balsamiq to ensure proper structure and organization of content on all device sizes.
-The final version of the wireframes can be found [here](readme-files/CV-Builder-Wireframe.pdf)
+The wireframe was made by hand. The final version of the wireframes can be found [here](assets/images/readme/wireframe.png)
 
 ### Design
 
-Special care was put into making this cv builder an easy tool to use with intuitive controls and appropriate user feedback. This includes the following:
+When the game was made the design was focussed on mobile first. the following things got some extra attention: 
 
--   Editable text will blink when hovered
--   Editable text background and outline will change when being edited
--   Clear and colored buttons are displayed to add a new element or section, and to delete an element or section
--   Sections and element border change on hover to indicate section or element being accessed
--   Validation message when content has been saved
--   Confirmation popup when content is to be reset
--   Clear handle icon on objects that can be sorted
--   Cursor changes when sortable handle is hovered or grabbed
--   Clear placeholders when sortable element is moved to indicate the new placement to the user
--   Header changes color to emphasize theme change
+-   What should I put here?
 
 ---
 
 ## Features
 
-### CV Sections
+### different Sections
 
-The information in the user's CV can be displayed in four types of sections.
+The website can be divided into four main sections:
 
--   **Info Section** would include the name and two tables of items for various contact information
-    ![alt text](readme-files/info-section-example.png "Info Section")
--   **Listing Section** would be used for listings such as education or work experience
-    ![alt text](readme-files/listing-section-example.png "Listing section")
--   **Block Section** would be used to display simple paragraphs of information
-    ![alt text](readme-files/block-section-example.png "block Section")
--   **Three Column** would be used to list elements in three columns
-    ![alt text](readme-files/three-col-section-example.png "Three Column Section")
+-   **Welcome Section** This section is a card designed section where people read about the game and continue to another page.
+    ![welcome section](assets/images/readme/welcome-section.png)
+-   **Donate Section** This section is creates a possibility so that people can donate to the creator.
+    ![donate section](assets/images/readme/donate-section.png)
+-   **Players Section** Here players can be added and deleted. and there is an information modal on this section.
+    ![players section](assets/images/readme/players-section.png)
+-   **Game Section** there the randomly selected name and the randomly selected question will be displayed.
+    ![game section](assets/images/readme/game-section.png)
 
-Sections can be added or removed, and re-organized with drag and drop. This also applies to individual items within these sections.
+Sections are responsive and have dynamic element with them. 
 
-### Themes
+### colors
 
-Additionally, the CV can be customized using 4 different themes that change the fonts and colors on the final product:
+The yellow color was manually selected because it is the color of beer and then the oppesite color (the pink color) was selected with the help of [Adobe Color Wheel](https://color.adobe.com/nl/create/color-wheel).
+In the picure below you can see the home screen with the 2 main colors:
 
--   #### Default
-
-![alt text](readme-files/theme-default-example.png "Default theme")
-
--   #### Modern
-
-![alt text](readme-files/theme-modern-example.png "Modern theme")
-
--   #### Lavender
-
-![alt text](readme-files/theme-lavender-example.png "Lavender theme")
-
--   #### Deco
-
-![alt text](readme-files/theme-deco-example.png "Deco theme")
+![home screen](assets/images/readme/home-screen.png)
 
 ### Save Function
 
+The game make use of the local storage so it is not a problem when players refresh the page.
+The names that where filled in by the players are stored in an array in the local storage and are randomly selected when you click on the screen.
+The questions and card are also stored in an array in the local storage. Every time the player clicks on the screen a random other item from the array will be selected and the old one will be deleted from local storage.
 Any changes made to the CV or its theme can be saved to be updated at a later time.
-When saved, the content of the page generates a JSON object which is stored in the browser's local storage. The theme chosen by the user is also saved to local storage.
-Upon reload of the page, the saved data and theme are automatically displayed on the page. If no information is found in local storage, a default CV and theme will be displayed.
+In the picture down below you can see the local storage with the 2 saved arrays:
 
-### Download as PDF
+![local storage](assets/images/readme/local-storage.png)
 
-The CV builder uses html2pdf.js to convert the content of the CV into a PDF document, that can be downloaded to the user's device.
+### Add and delete players function
 
-### Reset
+In the players section there are 2 buttons to add and delete players. The add button is made with the help of a "for loop" and the delete button deletes the newest input field.
 
-A reset button at the bottom of the page enables the user to reset the CV's content and theme to their default values. I also clears the local storage. The user has to confirm the reset in a modal window before the content is reset.
+### Reset Game
+
+The reset button on in the game section deletes the local storage and refreshes the page. before this is done the player will be asked if he or she want to continue with it.
+When the page is refeshed the player will get the same question if he or she would like to continue the game or start a new one. On the picture below you can see this notification in the modal.
+
+![reset notification](assets/images/readme/reset-notification.png)
 
 ### Responsive Design
 
-This application is primarily meant to be used on computer sized screens but it has been optimized to work on mobile devices as well.
-It was built responsively with the bootstrap framework, and uses JQuery UI Touch Punch to ensure all functionalities work on touch enabled devices.
+This application is build mobile first because it will mostly be used on small gatherings where most people do not have a laptop with them.
+With the help of Bootstrap the screens on different screen sizes could easily be editted.
 
 ---
 
@@ -191,54 +174,42 @@ It was built responsively with the bootstrap framework, and uses JQuery UI Touch
 
 -   HTML
 -   CSS
--   Bootstrap
 -   Javascript
 -   [JQuery](https://jquery.com/)
--   [JQuery UI](https://jqueryui.com/): for effects on the page and the sortable function
--   JQuery UI Touch Punch: to make JQuery UI's sortable function touch device friendly
--   [html2pdf.js](https://github.com/eKoopmans/html2pdf.js): relies on HTML2canvas and jsPDF to convert the CV to a PDF file
--   [anchorme.js](https://alexcorvi.github.io/anchorme.js/): dynamically finds urls and email addresses on the CV and converts them to anchor tags
-
+-   [Bootstrap](https://getbootstrap.com/)
 ---
 
 ## Tools
 
--   VSCode: IDE used to create and edit code
--   Adobe Photoshop: Image editor used for section vignettes and favicon
--   Balsamiq: Used to create wireframes
+-   Pen and paper to create the wireframe
+-   [Canva](https://canva.com) to create the logo
 -   [Font Awesome](https://fontawesome.com/): used for all icons throughout the site
--   [Google Fonts](https://fonts.google.com/): The following fonts were imported from Google fonts for the various themes: Montserrat, Open Sans, Raleway, Roboto, Lato, Jost
--   [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb): Chrome extension used to test site at different screen sizes
--   [Pingdom](https://tools.pingdom.com/): used to test site performance
--   [W3C HTML Validator](https://validator.w3.org/): used to validate HTML code
--   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): used to validate CSS
-
+-   [Google Fonts](https://fonts.google.com/): All the fonts were imported from Google Fonts
+-   [ResponsiveDesign.is](http://ami.responsivedesign.is/): used to make a photo of how the website will look in different screen sizes.
 ---
 
 ## Testing
 
 ### Manual Testing
 
-The site was tested on various platforms and browsers to ensure proper display and functionality across different screen sizes, including touch devices.
-
-As functionalities were added to the application, thorough testing was conducted to ensure proper behavior with no side-effects.
+The site was tested on diffent platforms and browsers to ensure a good display and functionality across different screen sizes.
 
 Google Chrome's dev tools were used extensively for debugging.
 
-The HTML and CSS were validated on W3C Validators, and speed tested on Pingdom.
+Furthermore the site was tested by 5 friends of my to see if anything was unclear. This resulted in some feedback which I fixed.
 
 ### User Testing
 
-When the program was advanced enough to be usable, several users were asked to manipulate it to assess their experience and comfort with it. This highlighted the need for more consistent user feedback. The following changes came from this round of testing:
+When the program was advanced enough to be usable, several users were asked to manipulate it to assess their experience and comfort with it. The following changes came from this round of testing:
 
--   Header background color changes when theme changes
--   Placeholders on sortable items to notify user where the item will be positioned
--   Notification when content is saved to local storage, additionally a note was added to let users know the content would be lost if the browser's cache was cleared
--   Confirmation window when content is reset
+-   Added a reset button to make the user experience better
+-   Added information modals to the game to answer all the main questions
+-   changed the home page to be more focussed on the game and not on donating
+-   When the page refreshes the user will get a question if he or she would like to continue
 
 ### Known Bugs
 
--   When generated from a mobile device, the PDF has a different aspect than when generated from larger screen sized because of how html2pdf.js converts a page to a PDF file. By sending options to html2pdf.js, it is possible for the CV to be laid out as if on a larger screen size, however the page breaks on the PDF seem to be determined by the device's window height, resulting in uneven and unpredictable page breaks. For this reason, the choice was made to have the PDF appear differently when generated from different screen sizes, for now.
+-   When somebody want to donate a curtain amout but instead of clicking on the number of beers first dirrectly presses the Paypal button the will come on my paypal account where they can type in their own number they want to donate. This is not that
 
 ---
 
@@ -246,30 +217,20 @@ When the program was advanced enough to be usable, several users were asked to m
 
 A number of new features will be implemented in the future.
 
--   A preview of the final PDF will be seen before download
+-   Multible packages of questions so an user can select a question pack based on a theme. 
 
--   More themes and granular customization options, such as a choice of fonts and colors.
+-   A form where users can upload their own questions to us so that we could add it to one of the packages.
 
--   New types of sections will be available for use
-
--   An interactive tutorial will be created to guide new users on how to use the platform
-
--   Currently, the fields that the user can edit are DIV elements with the attribute contenteditable set to "true". For the application to be more semantically accurate and accessible, these will be replaced with input fields.
-
----
-
-## Code Notes
-
-Initially when the CV was saved, the entire inner HTML of printable element was saved as a string. Measures were taken to instead translate the content of the html to an object, which allowed for more flexibility and scalability down the line.
+-   A Function where people can make their own question packs with their own questions and pre made questions.
 
 ---
 
 ## Aknowledgments
 
-[The following Code Institute student project](https://github.com/sabinemm/fruit-game) helped me in creating and structuring this very readme file
+[The following Code Institute student project](https://github.com/jumboduck/CV-Builder) helped me in to create this readme file.
 
-Thank you to [Felipe Alarcon](https://github.com/felipe-alarcon) for brainstorming the initial idea for the project, for assistance in testing and for support and guidance along the way.
+Thanks to [Felipe Alarcon](https://github.com/felipe-alarcon) for helping me with brainstorming on how to code curtain things and for helping me reflect on my own work.
 
-Many thanks to friends and family who helped testing the program.
+Thanks [Slack Overflow](https://stackoverflow.com/) for giving me code idea's when I was not curtain on how to code something.
 
-Thanks to the CI Slack community for advice in things large and small, and for encouragement throughout the process.
+Thanks [Code Pen IO](https://codepen.io/rsherry/pen/QwoqyO) for giving me tips on how to make the add and remove players Javascript code.
